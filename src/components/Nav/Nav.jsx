@@ -1,12 +1,14 @@
 import React from 'react'
 
-import { NavContainer, NavTitle } from './Nav.styles'
+import { NavContainer, NavIcon, NavTitle } from './Nav.styles'
 
 export default function index() {
   return (
     <NavContainer>
       <NavTitle>What's up, Luis</NavTitle>
-      <div>Menu</div>
+      <div>
+        <NavIcon className='fas fa-hamburger'></NavIcon>
+      </div>
     </NavContainer>
   )
 }

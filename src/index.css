@@ -1,5 +1,15 @@
 :root {
   font-size: 16px;
+  /* COLORS */
+  --light-blue: #b6c9f0;
+  --light-pink: #f5abc9;
+  --blue: #2978b5;
+  --dark-purple: #1a508b;
+  --purple-blue: #185adb;
+  --dark-blue: #0a1931;
+  --yellow: #ffc947;
+  --light-white: #f8f5f1;
+  --black: #222831;
 }
 
 * {
@@ -14,6 +24,7 @@ body {
     'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: var(--light-white);
 }
 
 code {
