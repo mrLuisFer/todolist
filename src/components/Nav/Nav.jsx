@@ -1,9 +1,12 @@
 import React from 'react'
 
+import { NavContainer, NavTitle } from './Nav.styles'
+
 export default function index() {
   return (
-    <nav>
-      <p>Some</p>
-    </nav>
+    <NavContainer>
+      <NavTitle>What's up, Luis</NavTitle>
+      <div>Menu</div>
+    </NavContainer>
   )
 }
