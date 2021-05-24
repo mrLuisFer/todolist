@@ -8,8 +8,12 @@
   --purple-blue: #185adb;
   --dark-blue: #0a1931;
   --yellow: #ffc947;
-  --light-white: #f8f5f1;
+  --white: #f8f5f1;
   --black: #222831;
+
+  /* PROPERTIES */
+  --transition: all 0.25s ease;
+  --small-radius: 11px;
 }
 
 * {

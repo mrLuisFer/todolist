@@ -1,10 +1,10 @@
 import './App.css'
-import Home from 'views/Home/Home'
+import Login from 'views/Login/Login'
 
 function App() {
   return (
     <main className='App'>
-      <Home />
+      <Login />
     </main>
   )
 }
