@@ -10,8 +10,6 @@ export const buttonStyle = (
   border-radius: ${radius};
   line-height: 0;
   cursor: ${cursorStyle};
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  -webkit-tap-highlight-color: transparent;
 
   ${userNoSelect()}
 
