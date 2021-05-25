@@ -1,35 +1,17 @@
 import styled from 'styled-components'
+import { buttonStyle } from 'styles/utils/buttonStyled'
 import { paddingLayout } from 'styles/utils/paddingLayout'
 
-export const LoginBottomContent = styled.section`
+export const LoginBottomContentStyled = styled.section`
   ${paddingLayout()}
 `
-
-export const LoginTopEmptyContent = styled.div`
-  height: 40vh;
-  width: 100%;
-  display: block;
-  position: relative;
-  background: var(--dark-purple);
-  margin-bottom: 3rem;
-
-  &::after {
-    content: ' ';
-    position: absolute;
-    bottom: -2rem;
-    height: 3rem;
-    background: var(--dark-purple);
-    width: 100%;
-    border-radius: 1% 1% 70%;
-  }
-`
-
 export const LoginTitle = styled.h1`
   font-size: 2rem;
   font-weight: 600;
   line-height: 2rem;
   margin-bottom: 3rem;
   opacity: 0.8;
+  display: inline-block;
 
   &:hover {
     opacity: 1;
@@ -81,19 +63,16 @@ export const LoginFormInput = styled.input`
 `
 
 export const LoginFormButton = styled.button`
-  border: none;
-  outline: none;
+  ${buttonStyle()}
+
   background: var(--purple-blue);
-  border-radius: var(--small-radius);
   color: var(--white);
   font-size: 1.2rem;
   width: 100%;
   height: 50px;
   text-align: center;
-  line-height: 0;
   letter-spacing: 1px;
   margin-top: 3rem;
-  cursor: pointer;
 
   &:hover {
     opacity: 0.9;
