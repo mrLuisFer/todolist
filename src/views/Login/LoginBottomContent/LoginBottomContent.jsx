@@ -1,4 +1,5 @@
 import React from 'react'
+import { bounce } from 'styles/animateCss/classNames'
 import {
   LoginBottomContentStyled,
   LoginContentInput,
@@ -11,7 +12,7 @@ import {
 export default function LoginBottomContent() {
   return (
     <LoginBottomContentStyled>
-      <LoginTitle>Login 🤗</LoginTitle>
+      <LoginTitle className={bounce}>Login 🤗</LoginTitle>
       <LoginContentInput>
         <LoginFormInput id='username-input' type='text' required />
         <LoginFormLabel htmlFor='username-input'>Username</LoginFormLabel>

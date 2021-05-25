@@ -5,7 +5,7 @@ import LoginTopContent from './LoginTopContent/LoginTopContent'
 export default function Login() {
   return (
     <section>
-      <LoginTopContent></LoginTopContent>
+      <LoginTopContent />
       <LoginBottomContent />
     </section>
   )

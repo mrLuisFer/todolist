@@ -10,12 +10,7 @@ export const LoginTitle = styled.h1`
   font-weight: 600;
   line-height: 2rem;
   margin-bottom: 3rem;
-  opacity: 0.8;
   display: inline-block;
-
-  &:hover {
-    opacity: 1;
-  }
 `
 
 export const LoginContentInput = styled.form`
