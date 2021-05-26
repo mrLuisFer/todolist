@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { faster, pulse } from 'styles/animateCss/classNames'
 
 import {
   LoginTopContentStyled,
@@ -20,7 +21,7 @@ export default function LoginTopContent() {
         Welcome to the mrLuisFer's todo list!
       </LoginTopTitle>
       {isSecretMsg ? (
-        <LoginSecreteMsg>
+        <LoginSecreteMsg className={`${pulse} ${faster}`}>
           <p>
             This is a Todo created by LuisFer, adapted to the needs it represents as
             Developer & Student. Obviously I could use already created
