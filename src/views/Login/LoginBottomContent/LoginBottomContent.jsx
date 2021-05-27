@@ -11,14 +11,16 @@ import {
 } from './LoginBottomContent.styles'
 
 export default function LoginBottomContent() {
-  const history = useHistory()
   const [loginInputValue, setLoginInputValue] = useState('')
+  const [isError, setIsError] = useState(false)
+  const history = useHistory()
 
   const handlePushToHome = () => {
-    history.push('/home')
-    if (loginInputValue.length > 4) {
-      localStorage.clear()
+    if (loginInputValue.match(/^[a-zA-Z]+$/)) {
+      history.push('/home')
       localStorage.setItem('userName', loginInputValue)
+    } else {
+      setIsError(true)
     }
   }
 
@@ -29,16 +31,21 @@ export default function LoginBottomContent() {
 
   useEffect(() => {
     checkUserName()
+    setIsError(false)
   }, [])
 
   const handleChangeInputValue = (event) => {
     setLoginInputValue(event.target.value)
   }
 
+  const preventSubmitEvent = (e) => {
+    e.preventDefault()
+  }
+
   return (
     <LoginBottomContentStyled>
       <LoginTitle className={bounce}>Login 🤗</LoginTitle>
-      <LoginContentInput>
+      <LoginContentInput onSubmit={preventSubmitEvent}>
         <LoginFormInput
           id='username-input'
           type='text'
@@ -48,7 +55,8 @@ export default function LoginBottomContent() {
           name='username-input'
         />
         <LoginFormLabel htmlFor='username-input'>Username</LoginFormLabel>
-        <LoginFormButton onClick={handlePushToHome} type='button'>
+        {isError ? <p>Error</p> : ''}
+        <LoginFormButton onClick={handlePushToHome} type='submit'>
           LOGIN
         </LoginFormButton>
       </LoginContentInput>
