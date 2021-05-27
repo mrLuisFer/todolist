@@ -1,10 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
-export default function ErrorMsg({ msgContent }) {
+import { ErrorMsgStyled } from './ErrorMsg.styles'
+
+export default function ErrorMsg({ children }) {
+  const [clearErrorMsg, setclearErrorMsg] = useState(false)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setclearErrorMsg(true)
+    }, 2000)
+    return () => {
+      clearTimeout(timer)
+    }
+  }, [])
+
   return (
-    <div>
-      <i className='fas fa-exclamation'></i>
-      <p>{msgContent}</p>
-    </div>
+    <>
+      {clearErrorMsg ? (
+        ''
+      ) : (
+        <ErrorMsgStyled>
+          <i className='fas fa-exclamation'></i>
+          <p>{children}</p>
+        </ErrorMsgStyled>
+      )}
+    </>
   )
 }

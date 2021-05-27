@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router'
 import { bounce } from 'styles/animateCss/classNames'
+import ErrorMsg from 'components/ErrorMsg/ErrorMsg'
+
 import {
   LoginBottomContentStyled,
   LoginContentInput,
@@ -55,7 +57,7 @@ export default function LoginBottomContent() {
           name='username-input'
         />
         <LoginFormLabel htmlFor='username-input'>Username</LoginFormLabel>
-        {isError ? <p>Error</p> : ''}
+        {isError ? <ErrorMsg>Error</ErrorMsg> : ''}
         <LoginFormButton onClick={handlePushToHome} type='submit'>
           LOGIN
         </LoginFormButton>
