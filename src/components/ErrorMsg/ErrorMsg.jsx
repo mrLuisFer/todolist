@@ -11,6 +11,7 @@ export default function ErrorMsg({ children }) {
     }, 2000)
     return () => {
       clearTimeout(timer)
+      setclearErrorMsg(false)
     }
   }, [])
 
