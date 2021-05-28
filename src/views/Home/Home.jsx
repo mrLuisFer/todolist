@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Nav from 'components/Nav/Nav'
+import Header from 'components/Header/Header'
 import TasksDashboard from 'components/TaksDashboard/TasksDashboard'
 
 export default function Home() {
@@ -7,7 +7,7 @@ export default function Home() {
 
   return (
     <section>
-      <Nav username={userName} />
+      <Header username={userName} />
       <TasksDashboard />
     </section>
   )

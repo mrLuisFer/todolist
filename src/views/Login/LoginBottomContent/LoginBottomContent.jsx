@@ -33,11 +33,14 @@ export default function LoginBottomContent() {
   const checkUserName = () => {
     const localstoreItem = localStorage.getItem('userName')
     console.log(localstoreItem)
+    if (localstoreItem !== null || localstoreItem !== undefined) {
+      window.location.replace('/home')
+    }
   }
 
   useEffect(() => {
-    checkUserName()
     setIsError(false)
+    checkUserName()
   }, [])
 
   const handleChangeInputValue = (event) => {

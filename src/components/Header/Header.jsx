@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { NavContainer, NavIcon, NavTitle } from './Nav.styles'
+import { NavContainer, NavIcon, NavTitle } from './Header.styles'
 
 export default function Nav({ username }) {
   return (
