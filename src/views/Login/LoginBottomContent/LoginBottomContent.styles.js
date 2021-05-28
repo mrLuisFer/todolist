@@ -6,11 +6,11 @@ export const LoginBottomContentStyled = styled.section`
   ${paddingLayout()}
 `
 export const LoginTitle = styled.h1`
+  display: inline-block;
   font-size: 2rem;
   font-weight: 600;
   line-height: 2rem;
   margin-bottom: 1.5rem;
-  display: inline-block;
 `
 
 export const LoginContentInput = styled.form`
@@ -19,25 +19,25 @@ export const LoginContentInput = styled.form`
 
 export const LoginFormLabel = styled.label`
   display: block;
-  left: 0;
-  pointer-events: none;
   font-size: 1rem;
+  left: 0;
   margin-left: 0.2rem;
   opacity: 0.8;
+  pointer-events: none;
   transition: var(--transition);
 `
 
 export const LoginFormInput = styled.input`
-  height: 2rem;
-  width: 100%;
-  padding: 0.3rem 0.6rem;
-  outline: none;
+  background: transparent;
+  border-bottom: 1px solid var(--light-blue);
+  border: none;
   display: block;
   font-size: 1rem;
-  background: transparent;
+  height: 2rem;
+  outline: none;
+  padding: 0.3rem 0.6rem;
   transition: var(--transition);
-  border: none;
-  border-bottom: 1px solid var(--light-blue);
+  width: 100%;
 
   &:hover {
     border-radius: 3px;
@@ -61,12 +61,12 @@ export const LoginFormButton = styled.button`
   background: var(--purple-blue);
   color: var(--white);
   font-size: 1.2rem;
-  width: 100%;
   height: 50px;
-  text-align: center;
   letter-spacing: 1px;
   margin-top: 3rem;
+  text-align: center;
   transition: var(--transition);
+  width: 100%;
 
   &:hover {
     filter: brightness(1.3);
