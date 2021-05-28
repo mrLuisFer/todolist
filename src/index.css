@@ -14,7 +14,8 @@
 
   /* PROPERTIES */
   --transition: all 0.25s ease;
-  --small-radius: 11px;
+  --sm-radius: 11px;
+  --m-radius: 15px;
 }
 
 * {

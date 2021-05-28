@@ -1,10 +1,7 @@
 import { css } from 'styled-components'
 import { userNoSelect } from './userNoSelect'
 
-export const buttonStyle = (
-  cursorStyle = 'pointer',
-  radius = 'var(--small-radius)'
-) => css`
+export const buttonStyle = (cursorStyle = 'pointer', radius = 'var(--sm-radius)') => css`
   border: none;
   outline: none;
   border-radius: ${radius};

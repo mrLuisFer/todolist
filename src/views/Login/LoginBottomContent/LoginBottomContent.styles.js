@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { buttonStyle } from 'styles/utils/buttonStyled'
 import { paddingLayout } from 'styles/utils/paddingLayout'
+import { userNoSelect } from 'styles/utils/userNoSelect'
 
 export const LoginBottomContentStyled = styled.section`
   ${paddingLayout()}
@@ -25,12 +26,13 @@ export const LoginFormLabel = styled.label`
   opacity: 0.8;
   pointer-events: none;
   transition: var(--transition);
+
+  ${userNoSelect()}
 `
 
 export const LoginFormInput = styled.input`
   background: transparent;
-  border-bottom: 1px solid var(--light-blue);
-  border: none;
+  border: 1.5px solid var(--light-blue);
   display: block;
   font-size: 1rem;
   height: 2rem;
@@ -38,13 +40,19 @@ export const LoginFormInput = styled.input`
   padding: 0.3rem 0.6rem;
   transition: var(--transition);
   width: 100%;
+  margin-top: 1rem;
+  border-radius: var(--sm-radius);
 
   &:hover {
     border-radius: 3px;
   }
 
   &:focus {
-    border-bottom: 0.5px solid var(--purple-blue);
+    border-radius: var(--m-radius);
+  }
+
+  &:disabled {
+    border-color: var(--error-color);
   }
 
   &:focus ~ ${LoginFormLabel}, &:valid ~ ${LoginFormLabel} {
