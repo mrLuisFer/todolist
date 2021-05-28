@@ -23,6 +23,10 @@ export default function LoginBottomContent() {
       localStorage.setItem('userName', loginInputValue)
     } else {
       setIsError(true)
+
+      setTimeout(() => {
+        setIsError(false)
+      }, 2000)
     }
   }
 

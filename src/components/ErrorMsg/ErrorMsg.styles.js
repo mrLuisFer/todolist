@@ -8,4 +8,5 @@ export const ErrorMsgStyled = styled.div`
   justify-content: flex-start;
   column-gap: 1rem;
   border-radius: var(--small-radius);
+  border: 3px solid #f55c47;
 `
