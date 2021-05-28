@@ -35,7 +35,7 @@ export const LoginFormInput = styled.input`
   border: 1.5px solid var(--light-blue);
   display: block;
   font-size: 1rem;
-  height: 2rem;
+  height: 40px;
   outline: none;
   padding: 0.3rem 0.6rem;
   transition: var(--transition);
@@ -67,7 +67,7 @@ export const LoginFormButton = styled.button`
   font-size: 1.2rem;
   height: 50px;
   letter-spacing: 1px;
-  margin-top: 3rem;
+  margin-top: 1.5rem;
   text-align: center;
   transition: var(--transition);
   width: 100%;
