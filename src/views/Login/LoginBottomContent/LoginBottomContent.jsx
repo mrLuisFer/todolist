@@ -18,7 +18,7 @@ export default function LoginBottomContent() {
   const history = useHistory()
 
   const handlePushToHome = () => {
-    if (loginInputValue.trim().match(/^[a-z][a-z\s]*$/)) {
+    if (loginInputValue.trim().match(/^[a-zA-Z][a-zA-Z\s]*$/)) {
       history.push('/home')
       localStorage.setItem('userName', loginInputValue.trim())
     } else {
