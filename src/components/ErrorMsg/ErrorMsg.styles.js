@@ -9,4 +9,5 @@ export const ErrorMsgStyled = styled.div`
   column-gap: 1rem;
   border-radius: var(--small-radius);
   border: 3px solid #f55c47;
+  margin: ${(props) => props.marginSize || '0'};
 `

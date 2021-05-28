@@ -52,6 +52,7 @@ export default function LoginBottomContent() {
     <LoginBottomContentStyled>
       <LoginTitle className={bounce}>Login 🤗</LoginTitle>
       <LoginContentInput onSubmit={preventSubmitEvent}>
+        <LoginFormLabel htmlFor='username-input'>Username</LoginFormLabel>
         <LoginFormInput
           id='username-input'
           type='text'
@@ -59,9 +60,9 @@ export default function LoginBottomContent() {
           value={loginInputValue}
           onChange={handleChangeInputValue}
           name='username-input'
+          disabled={isError}
         />
-        <LoginFormLabel htmlFor='username-input'>Username</LoginFormLabel>
-        {isError ? <ErrorMsg>Error</ErrorMsg> : ''}
+        {isError ? <ErrorMsg marginSize='2rem 0'>Error</ErrorMsg> : ''}
         <LoginFormButton onClick={handlePushToHome} type='submit'>
           LOGIN
         </LoginFormButton>

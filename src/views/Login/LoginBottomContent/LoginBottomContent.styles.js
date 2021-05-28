@@ -9,7 +9,7 @@ export const LoginTitle = styled.h1`
   font-size: 2rem;
   font-weight: 600;
   line-height: 2rem;
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
   display: inline-block;
 `
 
@@ -19,9 +19,7 @@ export const LoginContentInput = styled.form`
 
 export const LoginFormLabel = styled.label`
   display: block;
-  position: absolute;
   left: 0;
-  bottom: 6.5rem;
   pointer-events: none;
   font-size: 1rem;
   margin-left: 0.2rem;
@@ -68,8 +66,9 @@ export const LoginFormButton = styled.button`
   text-align: center;
   letter-spacing: 1px;
   margin-top: 3rem;
+  transition: var(--transition);
 
   &:hover {
-    opacity: 0.9;
+    filter: brightness(1.3);
   }
 `
