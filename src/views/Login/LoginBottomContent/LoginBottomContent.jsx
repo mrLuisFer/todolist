@@ -18,9 +18,9 @@ export default function LoginBottomContent() {
   const history = useHistory()
 
   const handlePushToHome = () => {
-    if (loginInputValue.match(/^[a-zA-Z]+$/)) {
+    if (loginInputValue.trim().match(/^[a-z][a-z\s]*$/)) {
       history.push('/home')
-      localStorage.setItem('userName', loginInputValue)
+      localStorage.setItem('userName', loginInputValue.trim())
     } else {
       setIsError(true)
 
@@ -41,7 +41,8 @@ export default function LoginBottomContent() {
   }, [])
 
   const handleChangeInputValue = (event) => {
-    setLoginInputValue(event.target.value)
+    const eventValue = event.target.value
+    setLoginInputValue(eventValue)
   }
 
   const preventSubmitEvent = (e) => {
