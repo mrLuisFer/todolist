@@ -43,6 +43,10 @@ export const LoginFormInput = styled.input`
   margin-top: 1rem;
   border-radius: var(--sm-radius);
 
+  &:hover {
+    box-shadow: 1px 1px 7px var(--shadow-color);
+  }
+
   &:focus {
     border-radius: var(--m-radius);
   }

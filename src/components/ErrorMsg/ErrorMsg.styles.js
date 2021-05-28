@@ -15,4 +15,8 @@ export const ErrorMsgStyled = styled.div`
   padding: 0.7rem 1rem;
 
   ${userNoSelect()}
+
+  &:hover {
+    box-shadow: 0.5px 1.5px 4px var(--shadow-color);
+  }
 `
