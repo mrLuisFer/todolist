@@ -62,7 +62,11 @@ export default function LoginBottomContent() {
           type='text'
           value={loginInputValue}
         />
-        {isError ? <ErrorMsg marginSize='2rem 0'>Error</ErrorMsg> : ''}
+        {isError ? (
+          <ErrorMsg marginSize='2rem 0'>Nombre de usuario invalido</ErrorMsg>
+        ) : (
+          ''
+        )}
         <LoginFormButton onClick={handlePushToHome} type='submit'>
           LOGIN
         </LoginFormButton>

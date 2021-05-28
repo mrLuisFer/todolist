@@ -1,13 +1,18 @@
 import styled from 'styled-components'
+import { userNoSelect } from 'styles/utils/userNoSelect'
 
 export const ErrorMsgStyled = styled.div`
-  background: var(--error-color);
-  padding: 0.7rem 1rem;
-  display: flex;
   align-items: center;
-  justify-content: flex-start;
-  column-gap: 1rem;
+  background: var(--error-color);
   border-radius: var(--sm-radius);
   border: 3px solid #f55c47;
+  color: var(--white);
+  column-gap: 0.6rem;
+  display: flex;
+  font-weight: 500;
+  justify-content: flex-start;
   margin: ${(props) => props.marginSize || '0'};
+  padding: 0.7rem 1rem;
+
+  ${userNoSelect()}
 `
