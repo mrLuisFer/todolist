@@ -4,7 +4,7 @@ import { userNoSelect } from 'styles/utils/userNoSelect'
 export const NavInfoContainer = styled.nav`
   display: block;
   position: absolute;
-  left: -1000%;
+  left: -20vw;
   background: var(--bg-dark-blue);
   border-radius: var(--sm-radius);
   padding: 0;
