@@ -11,6 +11,7 @@ import {
   LoginFormLabel,
   LoginTitle,
 } from './LoginBottomContent.styles'
+import { log } from 'utils/functions/log'
 
 export default function LoginBottomContent() {
   const [loginInputValue, setLoginInputValue] = useState('')
@@ -32,7 +33,7 @@ export default function LoginBottomContent() {
 
   const checkUserName = () => {
     const localstoreItem = localStorage.getItem('userName')
-    console.log(localstoreItem)
+    log(localstoreItem)
     if (localstoreItem !== null || localstoreItem !== undefined) {
       window.location.replace('/home')
     }
