@@ -2,7 +2,12 @@ import React, { useEffect, useState } from 'react'
 
 import { NavContainer, NavIcon, NavTitle, NavTitleSpan } from './Header.styles'
 
-export default function Nav({ username }) {
+/**
+ *
+ * @param {string} username
+ * @returns React.FC
+ */
+export default function Nav({ username = 'user' }) {
   const [showInfoMenu, setShowInfoMenu] = useState(false)
 
   const closeMenuIcon = 'far fa-minus-square'
@@ -25,6 +30,7 @@ export default function Nav({ username }) {
         <NavIcon
           className={showInfoMenu ? closeMenuIcon : defaultMenuIcon}
           onClick={handleShowMenu}
+          title={showInfoMenu ? 'Close menu' : 'Open menu'}
         ></NavIcon>
       </div>
       {showInfoMenu ? <p>INFO</p> : ''}
