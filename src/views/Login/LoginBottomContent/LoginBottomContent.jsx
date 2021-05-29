@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router'
 import { bounce } from 'styles/animateCss/classNames'
 import ErrorMsg from 'components/ErrorMsg/ErrorMsg'
+import { log } from 'utils/functions/log'
 
 import {
   LoginBottomContentStyled,
@@ -11,7 +12,6 @@ import {
   LoginFormLabel,
   LoginTitle,
 } from './LoginBottomContent.styles'
-import { log } from 'utils/functions/log'
 
 export default function LoginBottomContent() {
   const [loginInputValue, setLoginInputValue] = useState('')

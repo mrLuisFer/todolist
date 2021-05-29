@@ -12,6 +12,7 @@ export const LoginTitle = styled.h1`
   font-weight: 600;
   line-height: 2rem;
   margin-bottom: 1.5rem;
+  color: var(--title-color);
 `
 
 export const LoginContentInput = styled.form`
