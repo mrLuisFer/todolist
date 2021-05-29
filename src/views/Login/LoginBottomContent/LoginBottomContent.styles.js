@@ -68,7 +68,7 @@ export const LoginFormButton = styled.button`
   ${buttonStyle()}
 
   background: var(--purple-blue);
-  color: var(--white);
+  color: var(--text-white);
   font-size: 1.2rem;
   height: 50px;
   letter-spacing: 1px;

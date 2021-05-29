@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import NavInfo from './NavInfo/NavInfo'
 
-import { HContainer, HIcon, HTitle, HTitleSpan } from './Header.styles'
+import { HContainer, HIcon, HTitle, HTitleSpan, HIconContainer } from './Header.styles'
 
 /**
  *
@@ -27,14 +27,14 @@ export default function Nav({ username = 'user' }) {
       <HTitle>
         What's up, <HTitleSpan>{username}!</HTitleSpan>
       </HTitle>
-      <div>
+      <HIconContainer>
         <HIcon
           className={showInfoMenu ? closeMenuIcon : defaultMenuIcon}
           onClick={handleShowMenu}
           title={showInfoMenu ? 'Close menu' : 'Open menu'}
         ></HIcon>
-      </div>
-      {showInfoMenu ? <NavInfo /> : ''}
+        {showInfoMenu ? <NavInfo /> : ''}
+      </HIconContainer>
     </HContainer>
   )
 }

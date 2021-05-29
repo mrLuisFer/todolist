@@ -27,7 +27,7 @@ export const LoginTopContentStyled = styled.div`
 `
 
 export const LoginTopTitle = styled.h1`
-  color: var(--white);
+  color: var(--text-white);
   letter-spacing: 1px;
   line-height: 1.5;
   cursor: pointer;
@@ -44,7 +44,7 @@ export const LoginSecreteMsg = styled.div`
 export const LoginSecreteMsgButton = styled.button`
   ${buttonStyle()}
 
-  background: var(--dark-blue);
+  background: var(--bg-dark-blue);
   color: var(--light-blue);
   font-size: 1rem;
   height: 30px;

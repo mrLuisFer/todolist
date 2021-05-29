@@ -6,16 +6,17 @@
   --blue: #2978b5;
   --dark-purple: #1a508b;
   --purple-blue: #185adb;
-  --dark-blue: #0a1931;
   --yellow: #ffc947;
-  --white: #f8f5f1;
   --black: #222831;
+
+  --bg-dark-blue: #0a1931;
 
   --title-color: #1e232b;
   --shadow-color: rgba(34, 40, 49, 0.4);
   --error-color: #e63232;
   --info-color: #4187ed;
   --text-blue: #3e70dd;
+  --text-white: #f8f5f1;
 
   /* PROPERTIES */
   --transition: all 0.25s ease;

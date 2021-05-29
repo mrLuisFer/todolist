@@ -6,7 +6,7 @@ export const ErrorMsgStyled = styled.div`
   background: var(--error-color);
   border-radius: var(--sm-radius);
   border: 3px solid #f55c47;
-  color: var(--white);
+  color: var(--text-white);
   column-gap: 0.6rem;
   display: flex;
   font-weight: 500;

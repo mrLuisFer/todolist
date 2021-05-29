@@ -27,3 +27,7 @@ export const HIcon = styled.i`
   color: var(--info-color);
   cursor: pointer;
 `
+
+export const HIconContainer = styled.div`
+  position: relative;
+`

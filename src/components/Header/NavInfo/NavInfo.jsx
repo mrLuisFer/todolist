@@ -1,12 +1,14 @@
 import React from 'react'
 
+import { NavInfoContainer, NavInfoListElement } from './NavInfo.styles'
+
 export default function InfoComponent() {
   return (
-    <nav>
+    <NavInfoContainer>
       <ul>
-        <li>About</li>
-        <li>Contact</li>
+        <NavInfoListElement>About</NavInfoListElement>
+        <NavInfoListElement>Contact</NavInfoListElement>
       </ul>
-    </nav>
+    </NavInfoContainer>
   )
 }
