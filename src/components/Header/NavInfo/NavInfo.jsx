@@ -1,18 +1,8 @@
 import React from 'react'
 import { useHistory } from 'react-router'
+import { infoNav } from './infoNav'
 
 import { NavInfoContainer, NavInfoListElement } from './NavInfo.styles'
-
-const infoNav = [
-  {
-    linkName: 'About',
-    url: '/about',
-  },
-  {
-    linkName: 'Contact',
-    url: '/contact',
-  },
-]
 
 export default function InfoComponent() {
   const history = useHistory()
@@ -20,6 +10,8 @@ export default function InfoComponent() {
   const handleUrlToPush = (url = '') => {
     if (url.length > 0) {
       history.push(url)
+    } else {
+      history.push('/')
     }
   }
 
