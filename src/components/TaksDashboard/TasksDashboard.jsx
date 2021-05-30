@@ -3,6 +3,7 @@ import {
   TasksDashboardContainer,
   TDInput,
   TDInputContainer,
+  TDTaskDescription,
 } from './TasksDashboard.styles'
 
 export default function TasksDashboard() {
@@ -15,10 +16,21 @@ export default function TasksDashboard() {
             name='task-input'
             id='task-input'
             placeholder='Add task...'
+            required
           />
         </TDInputContainer>
-        <div aria-hidden>
-          <i className='far fa-plus-square' title='Add a task'></i>
+        <TDTaskDescription
+          name='task-description'
+          id='task-description'
+          cols='20'
+          rows='4'
+          placeholder='Some description?'
+        ></TDTaskDescription>
+        <div>
+          <button type='button'>
+            <i className='far fa-plus-square' title='Add a task' />
+            Add Task
+          </button>
         </div>
       </div>
     </TasksDashboardContainer>
