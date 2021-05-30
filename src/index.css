@@ -7,7 +7,6 @@
   --dark-purple: #1a508b;
   --purple-blue: #185adb;
   --yellow: #ffc947;
-  --black: #222831;
 
   --bg-dark-blue: #0a1931;
 
@@ -17,6 +16,7 @@
   --info-color: #4187ed;
   --text-blue: #3e70dd;
   --text-white: #f8f5f1;
+  --text-black: #222831;
 
   /* PROPERTIES */
   --transition: all 0.25s ease;
