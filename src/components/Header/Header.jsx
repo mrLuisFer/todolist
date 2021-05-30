@@ -4,7 +4,6 @@ import NavInfo from './NavInfo/NavInfo'
 import { HContainer, HIcon, HTitle, HTitleSpan, HIconContainer } from './Header.styles'
 
 /**
- *
  * @param {string} username
  * @returns React.FC
  */
