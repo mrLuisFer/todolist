@@ -28,6 +28,7 @@ export default function Nav({ username = 'user' }) {
       </HTitle>
       <HIconContainer>
         <HIcon
+          aria-hidden
           className={showInfoMenu ? closeMenuIcon : defaultMenuIcon}
           onClick={handleShowMenu}
           title={showInfoMenu ? 'Close menu' : 'Open menu'}

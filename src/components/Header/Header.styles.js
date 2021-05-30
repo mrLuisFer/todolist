@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { paddingLayout } from 'styles/utils/paddingLayout'
+import { userNoSelect } from 'styles/utils/userNoSelect'
 
 export const HContainer = styled.header`
   ${paddingLayout()}
@@ -14,7 +15,7 @@ export const HTitle = styled.h1`
   letter-spacing: 1px;
   font-weight: 600;
   color: var(--title-color);
-  font-size: 1.4rem;
+  font-size: 1.5rem;
 `
 
 export const HTitleSpan = styled.span`
@@ -22,12 +23,14 @@ export const HTitleSpan = styled.span`
   color: var(--text-blue);
 `
 
-export const HIcon = styled.i`
-  font-size: 1.4rem;
-  color: var(--info-color);
-  cursor: pointer;
-`
-
 export const HIconContainer = styled.div`
   position: relative;
+
+  ${userNoSelect()}
+`
+
+export const HIcon = styled.i`
+  font-size: 1.8rem;
+  color: var(--info-color);
+  cursor: pointer;
 `

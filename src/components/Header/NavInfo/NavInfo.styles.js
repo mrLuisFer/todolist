@@ -12,7 +12,7 @@ export const NavInfoContainer = styled.nav`
   width: 100%;
   width: -moz-available; /* WebKit-based browsers will ignore this. */
   width: -webkit-fill-available; /* Mozilla-based browsers will ignore this. */
-  width: stretch;
+  width: max-content;
 `
 
 const fade = keyframes`
@@ -36,6 +36,7 @@ export const NavInfoListElement = styled.li`
   justify-content: space-between;
   padding: 0.8rem 0.5rem;
   transition: var(--transition);
+  min-width: 90px;
 
   animation: ${fade} 0.2s ease;
 

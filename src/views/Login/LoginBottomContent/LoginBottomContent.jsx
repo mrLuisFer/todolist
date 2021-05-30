@@ -34,7 +34,11 @@ export default function LoginBottomContent() {
   const checkUserName = () => {
     const localstoreItem = localStorage.getItem('userName')
     log(localstoreItem)
-    if (localstoreItem !== null || localstoreItem !== undefined) {
+    if (
+      localstoreItem !== null &&
+      localstoreItem !== undefined &&
+      localstoreItem.length > 0
+    ) {
       window.location.replace('/home')
     }
   }
