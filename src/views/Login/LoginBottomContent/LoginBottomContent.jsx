@@ -39,7 +39,11 @@ export default function LoginBottomContent() {
       localstoreItem !== undefined &&
       localstoreItem.length > 0
     ) {
-      window.location.replace('/home')
+      try {
+        history.push('/home')
+      } catch (e) {
+        window.location.replace('/home')
+      }
     }
   }
 
