@@ -42,6 +42,7 @@ export default function LoginBottomContent() {
       try {
         history.push('/home')
       } catch (e) {
+        log(e)
         window.location.replace('/home')
       }
     }
