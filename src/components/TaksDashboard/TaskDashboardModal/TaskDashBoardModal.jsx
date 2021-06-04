@@ -1,6 +1,6 @@
 import React from 'react'
 
-import TDAddTaskSection from '../TDAddTaskSection/TDAddTaskSection'
+import TDAddTaskSection from './TDAddTaskSection/TDAddTaskSection'
 
 import {
   TasksDashboardModalContainer,

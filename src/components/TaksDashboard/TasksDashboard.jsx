@@ -1,7 +1,7 @@
 import Modal from 'components/Modal/Modal'
 import React, { useState } from 'react'
-
 import TaskDashBoardModal from './TaskDashboardModal/TaskDashBoardModal'
+
 import { TasksDashboardContainer } from './TasksDashboard.styles'
 
 export default function TasksDashboard() {
