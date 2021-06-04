@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { borderRadius } from 'styles/utils/borderRadius'
 import { buttonStyle } from 'styles/utils/buttonStyled'
 import { userNoSelect } from 'styles/utils/userNoSelect'
+import { mediaScreens } from 'utils/mediaScreens'
 
 export const TDAddTaskSectionContainer = styled.div`
   display: flex;
@@ -16,12 +17,17 @@ export const TDAddTaskColorsContainer = styled.div`
 `
 
 export const TDAddTaskColor = styled.div`
-  height: 30px;
-  width: 30px;
-  background: ${(props) => props.bgColor};
+  height: 20px;
+  width: 20px;
   cursor: pointer;
+  background: ${(props) => props.bgColor};
   ${borderRadius('100%')};
   ${userNoSelect()}
+
+  @media (min-width: ${mediaScreens.mobile}) {
+    height: 25px;
+    width: 25px;
+  }
 `
 
 export const TDAddTaskButton = styled.button`
