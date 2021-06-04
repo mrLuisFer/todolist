@@ -15,15 +15,21 @@ export default function InfoComponent() {
     }
   }
 
+  const deleteLocalStorageLogin = () => {
+    localStorage.clear()
+    history.push('/')
+  }
+
   return (
     <NavInfoContainer>
       <ul>
-        {infoNav.map(({ linkName, url }, id) => (
+        {infoNav.map(({ linkName, url, icon }, id) => (
           <NavInfoListElement key={id} onClick={() => handleUrlToPush(url)}>
             {linkName}
-            <i className='fas fa-caret-right'></i>
+            {icon ? <i className='fas fa-caret-right'></i> : ''}
           </NavInfoListElement>
         ))}
+        <NavInfoListElement onClick={deleteLocalStorageLogin}>Log Out</NavInfoListElement>
       </ul>
     </NavInfoContainer>
   )
