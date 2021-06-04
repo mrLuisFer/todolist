@@ -21,6 +21,7 @@ export const TDInputContainer = styled.div`
   display: block;
   padding: 0.5rem 0.8rem;
   width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.5);
 
   &:hover {
     box-shadow: 0.5px 1px 4px var(--shadow-color);
@@ -28,11 +29,11 @@ export const TDInputContainer = styled.div`
 `
 
 export const TDInput = styled.input`
-  border: 0;
   font-size: 1rem;
   font-weight: 700;
   outline: none;
   width: 100%;
+  border: none;
 
   &::placeholder {
     color: var(--text-black);
@@ -41,7 +42,7 @@ export const TDInput = styled.input`
 `
 
 export const TDTaskDescriptionContainer = styled.div`
-  border: 1px solid rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.5);
   margin: 1rem 0;
   padding: 0.5rem;
   ${borderRadius('var(--m-radius)')}
