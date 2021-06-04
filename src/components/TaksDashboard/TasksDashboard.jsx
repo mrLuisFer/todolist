@@ -1,8 +1,8 @@
 import Modal from 'components/Modal/Modal'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import TaskDashBoardModal from './TaskDashboardModal/TaskDashBoardModal'
 
-import { TasksDashboardContainer } from './TasksDashboard.styles'
+import { TasksDashboardContainer, TasksDashboardButton } from './TasksDashboard.styles'
 
 export default function TasksDashboard() {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -15,11 +15,16 @@ export default function TasksDashboard() {
     setIsModalOpen(false)
   }
 
+  useEffect(() => {
+    handleCloseModal()
+  }, [])
+
   return (
     <TasksDashboardContainer>
-      <button type='button' onClick={handleOpenModal}>
+      <TasksDashboardButton type='button' onClick={handleOpenModal}>
+        <i className='fas fa-plus' title='Click to add a task' />
         Add task
-      </button>
+      </TasksDashboardButton>
       {isModalOpen ? (
         <Modal
           jsxComponent={<TaskDashBoardModal />}
