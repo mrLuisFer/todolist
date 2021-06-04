@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { borderRadius } from 'styles/utils/borderRadius'
+import { buttonStyle } from 'styles/utils/buttonStyled'
 import { paddingLayout } from 'styles/utils/paddingLayout'
 
 export const ModalContainer = styled.div`
@@ -20,7 +21,7 @@ export const ModalContent = styled.div`
   position: relative;
   display: block;
 
-  ${paddingLayout('2rem', '0.5rem', '2rem', '0.5rem')}
+  ${paddingLayout('1rem', '0.5rem', '2rem', '0.5rem')}
 
   ${borderRadius()}
 `
@@ -29,4 +30,13 @@ export const ModalCloseBtnContainer = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
+`
+
+export const ModalCloseBtn = styled.button`
+  ${buttonStyle()}
+
+  padding: 0.5rem 0.8rem;
+  background: var(--error-color);
+  color: var(--white);
+  font-size: 1.2rem;
 `

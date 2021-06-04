@@ -1,7 +1,12 @@
 import React from 'react'
 
 import ReactDOM from 'react-dom'
-import { ModalContainer, ModalCloseBtnContainer, ModalContent } from './Modal.styles'
+import {
+  ModalContainer,
+  ModalCloseBtnContainer,
+  ModalContent,
+  ModalCloseBtn,
+} from './Modal.styles'
 
 /**
  *
@@ -18,7 +23,9 @@ export default function Modal({ jsxComponent, elementId = '', closeFunc }) {
           <ModalContent>
             <ModalCloseBtnContainer>
               {/* TODO: update the styles  */}
-              <button onClick={closeFunc}>X</button>
+              <ModalCloseBtn onClick={closeFunc}>
+                <i className='fas fa-times' title='Cancelar' />
+              </ModalCloseBtn>
             </ModalCloseBtnContainer>
             {jsxComponent}
           </ModalContent>
