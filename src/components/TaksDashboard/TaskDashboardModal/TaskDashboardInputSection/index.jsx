@@ -6,6 +6,11 @@ import {
   TDInputContainer,
 } from './TaskDashboardInputSection.styles'
 
+/**
+ *
+ * @param {Function} closeModalFunc
+ * @returns JSX.Element
+ */
 export default function index({ closeModalFunc }) {
   const handleEnterKeyDown = (e) => {
     if (e.key === 'Enter') {
