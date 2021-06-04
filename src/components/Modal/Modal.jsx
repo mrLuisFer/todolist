@@ -16,6 +16,7 @@ export default function Modal({ jsxComponent, elementId = '', closeFunc }) {
         <ModalContainer>
           <ModalContent>
             <ModalCloseBtnContainer>
+              {/* TODO: update the styles  */}
               <button onClick={closeFunc}>X</button>
             </ModalCloseBtnContainer>
             {jsxComponent}

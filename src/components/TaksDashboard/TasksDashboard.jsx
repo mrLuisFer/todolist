@@ -1,5 +1,6 @@
-import Modal from 'components/Modal/Modal'
 import React, { useEffect, useState } from 'react'
+
+import Modal from 'components/Modal/Modal'
 import TaskDashBoardModal from './TaskDashboardModal/TaskDashBoardModal'
 
 import { TasksDashboardContainer, TasksDashboardButton } from './TasksDashboard.styles'
