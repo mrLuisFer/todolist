@@ -66,3 +66,14 @@ export const TDTaskDescription = styled.textarea`
   font-family: var(--font-family);
   height: 120px;
 `
+
+export const TDInputInfo = styled.i`
+  color: var(--dark-purple);
+  transition: var(--transition);
+  cursor: pointer;
+  font-size: 1.1rem;
+
+  &:hover {
+    color: var(--purple-blue);
+  }
+`

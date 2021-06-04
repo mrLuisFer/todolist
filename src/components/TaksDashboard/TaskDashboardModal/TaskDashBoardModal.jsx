@@ -9,6 +9,7 @@ import {
   TDTaskDescription,
   TDFullWidth,
   TDTaskDescriptionContainer,
+  TDInputInfo,
 } from './TaskDashboardModal.styles'
 
 export default function TaskDashBoardModal({ closeModalFunc }) {
@@ -31,7 +32,10 @@ export default function TaskDashBoardModal({ closeModalFunc }) {
             autoComplete='off'
             onKeyDown={handleEnterKeyDown}
           />
-          <i className='fas fa-info-circle' />
+          <TDInputInfo
+            className='fas fa-info-circle'
+            title='Press Enter for add the task'
+          />
         </TDInputContainer>
         <TDTaskDescriptionContainer>
           <TDTaskDescription
