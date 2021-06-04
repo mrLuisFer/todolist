@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import {
   TDTaskDescriptionContainer,
   TDTaskDescription,
+  TDOpenDescriptionBtn,
 } from './TaskDashboardDescriptionSection.styles'
 
 export default function TaskDashboardDescriptionSection() {
@@ -25,7 +26,9 @@ export default function TaskDashboardDescriptionSection() {
       {showDescription ? (
         ''
       ) : (
-        <button onClick={handleShowDescription}>Description?</button>
+        <TDOpenDescriptionBtn onClick={handleShowDescription}>
+          Description?
+        </TDOpenDescriptionBtn>
       )}
       {showDescription ? (
         <TDTaskDescriptionContainer>
