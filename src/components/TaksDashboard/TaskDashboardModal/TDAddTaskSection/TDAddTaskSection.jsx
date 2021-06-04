@@ -14,8 +14,9 @@ export default function TDAddTaskSection({ closeModalFunc }) {
   return (
     <TDAddTaskSectionContainer>
       <TDAddTaskColorsContainer>
-        <TDAddTaskColor></TDAddTaskColor>
-        <TDAddTaskColor></TDAddTaskColor>
+        <TDAddTaskColor bgColor='var(--blue)' />
+        <TDAddTaskColor bgColor='var(--green)' />
+        <TDAddTaskColor bgColor='var(--important-color)' />
       </TDAddTaskColorsContainer>
       <TDAddTaskButton type='button' onClick={closeModalFunc}>
         <i className='far fa-plus-square' title='Add a task' />

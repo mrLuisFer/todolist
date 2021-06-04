@@ -17,7 +17,7 @@ export const TDAddTaskColorsContainer = styled.div`
 export const TDAddTaskColor = styled.div`
   height: 30px;
   width: 30px;
-  background: #000;
+  background: ${(props) => props.bgColor};
   cursor: pointer;
   ${borderRadius('100%')}
 `
