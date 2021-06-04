@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { borderRadius } from 'styles/utils/borderRadius'
 import { buttonStyle } from 'styles/utils/buttonStyled'
 
@@ -14,7 +14,7 @@ export const TDTaskDescription = styled.textarea`
   height: auto;
   outline: none;
   overflow-x: hidden;
-  padding: 0.5rem;
+  padding: 0.5rem 0;
   resize: none;
   width: 100%;
   line-height: 1.5;
@@ -23,13 +23,24 @@ export const TDTaskDescription = styled.textarea`
   font-weight: 400;
   font-family: var(--font-family);
   height: 120px;
+  font-size: 1rem;
+`
+
+const commonDescriptionBtn = () => css`
+  ${buttonStyle()};
+  font-weight: 400;
+  font-size: 1rem;
 `
 
 export const TDOpenDescriptionBtn = styled.button`
-  ${buttonStyle()};
+  ${commonDescriptionBtn()};
   padding: 1.2rem 0.7rem;
   margin: 1rem 0;
-  font-size: 1rem;
-  font-weight: 400;
   background: var(--grey);
+`
+
+export const TDCloseDescriptionBtn = styled.button`
+  ${commonDescriptionBtn()};
+  padding: 0.3rem 0.5rem;
+  color: var(--important-color);
 `

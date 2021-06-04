@@ -4,6 +4,7 @@ import {
   TDTaskDescriptionContainer,
   TDTaskDescription,
   TDOpenDescriptionBtn,
+  TDCloseDescriptionBtn,
 } from './TaskDashboardDescriptionSection.styles'
 
 export default function TaskDashboardDescriptionSection() {
@@ -32,7 +33,9 @@ export default function TaskDashboardDescriptionSection() {
       )}
       {showDescription ? (
         <TDTaskDescriptionContainer>
-          <button onClick={handleCloseDescription}>X</button>
+          <TDCloseDescriptionBtn onClick={handleCloseDescription}>
+            <i className='fas fa-times' title='Cancel Description' />
+          </TDCloseDescriptionBtn>
           <TDTaskDescription
             name='task-description'
             id='task-description'
