@@ -1,6 +1,7 @@
 import React from 'react'
-
 import ReactDOM from 'react-dom'
+import { fadeIn, faster } from 'styles/animateCss/classNames'
+
 import {
   ModalContainer,
   ModalCloseBtnContainer,
@@ -20,7 +21,7 @@ export default function Modal({ jsxComponent, elementId = '', closeFunc }) {
     <>
       {ReactDOM.createPortal(
         <ModalContainer>
-          <ModalContent>
+          <ModalContent className={`${fadeIn} ${faster}`}>
             <ModalCloseBtnContainer>
               <ModalCloseBtn onClick={closeFunc}>
                 <i className='fas fa-times' title='Cancel' />

@@ -7,3 +7,4 @@ export const faster = 'animate__faster'
 
 export const bounce = `${animated} animate__bounce`
 export const pulse = `${animated} animate__pulse`
+export const fadeIn = `${animated} animate__fadeIn`
