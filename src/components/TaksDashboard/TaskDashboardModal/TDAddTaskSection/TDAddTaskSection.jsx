@@ -10,14 +10,14 @@ import {
  *
  * @returns JSX.Element
  */
-export default function TDAddTaskSection() {
+export default function TDAddTaskSection({ closeModalFunc }) {
   return (
     <TDAddTaskSectionContainer>
       <TDAddTaskColorsContainer>
         <TDAddTaskColor></TDAddTaskColor>
         <TDAddTaskColor></TDAddTaskColor>
       </TDAddTaskColorsContainer>
-      <TDAddTaskButton type='button'>
+      <TDAddTaskButton type='button' onClick={closeModalFunc}>
         <i className='far fa-plus-square' title='Add a task' />
         Add Task
       </TDAddTaskButton>

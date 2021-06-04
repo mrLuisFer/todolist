@@ -11,7 +11,7 @@ import {
   TDTaskDescriptionContainer,
 } from './TaskDashboardModal.styles'
 
-export default function TaskDashBoardModal() {
+export default function TaskDashBoardModal({ closeModalFunc }) {
   return (
     <TasksDashboardModalContainer>
       <TDFullWidth>
@@ -33,7 +33,7 @@ export default function TaskDashBoardModal() {
             placeholder='Some description?'
           ></TDTaskDescription>
         </TDTaskDescriptionContainer>
-        <TDAddTaskSection />
+        <TDAddTaskSection closeModalFunc={closeModalFunc} />
       </TDFullWidth>
     </TasksDashboardModalContainer>
   )

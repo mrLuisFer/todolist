@@ -28,7 +28,7 @@ export default function TasksDashboard() {
       </TasksDashboardButton>
       {isModalOpen ? (
         <Modal
-          jsxComponent={<TaskDashBoardModal />}
+          jsxComponent={<TaskDashBoardModal closeModalFunc={handleCloseModal} />}
           elementId='task-modal'
           closeFunc={handleCloseModal}
         />
