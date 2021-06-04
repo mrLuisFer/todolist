@@ -4,7 +4,8 @@ import ReactDOM from 'react-dom'
 import { ModalContainer, ModalCloseBtnContainer, ModalContent } from './Modal.styles'
 
 /**
- * @param {JSX.Element | React.FC} component
+ *
+ * @param {JSX.Element | React.FC} jsxComponent
  * @param {string} elementId
  * @param {Function} closeFunc
  * @returns JSX.Element
