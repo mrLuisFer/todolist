@@ -1,14 +1,13 @@
 import React from 'react'
 
+import TaskDashboardDescriptionSection from './TaskDashboardDescriptionSection/'
 import TDAddTaskSection from './TDAddTaskSection/TDAddTaskSection'
 
 import {
   TasksDashboardModalContainer,
   TDInput,
   TDInputContainer,
-  TDTaskDescription,
   TDFullWidth,
-  TDTaskDescriptionContainer,
   TDInputInfo,
 } from './TaskDashboardModal.styles'
 
@@ -37,15 +36,7 @@ export default function TaskDashBoardModal({ closeModalFunc }) {
             title='Press Enter for add the task'
           />
         </TDInputContainer>
-        <TDTaskDescriptionContainer>
-          <TDTaskDescription
-            name='task-description'
-            id='task-description'
-            cols='20'
-            rows='4'
-            placeholder='Some description?'
-          ></TDTaskDescription>
-        </TDTaskDescriptionContainer>
+        <TaskDashboardDescriptionSection />
         <TDAddTaskSection closeModalFunc={closeModalFunc} />
       </TDFullWidth>
     </TasksDashboardModalContainer>
