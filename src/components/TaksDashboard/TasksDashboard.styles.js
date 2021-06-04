@@ -58,5 +58,3 @@ export const TDTaskDescription = styled.textarea`
   letter-spacing: normal;
   border-collapse: collapse;
 `
-
-export const TDAddTaskSection = styled.div``

@@ -1,4 +1,6 @@
 import React from 'react'
+import TDAddTaskSection from './TDAddTaskSection/TDAddTaskSection'
+
 import {
   TasksDashboardContainer,
   TDInput,
@@ -6,7 +8,6 @@ import {
   TDTaskDescription,
   TDFullWidth,
   TDTaskDescriptionContainer,
-  TDAddTaskSection,
 } from './TasksDashboard.styles'
 
 export default function TasksDashboard() {
@@ -31,12 +32,7 @@ export default function TasksDashboard() {
             placeholder='Some description?'
           ></TDTaskDescription>
         </TDTaskDescriptionContainer>
-        <TDAddTaskSection>
-          <button type='button'>
-            <i className='far fa-plus-square' title='Add a task' />
-            Add Task
-          </button>
-        </TDAddTaskSection>
+        <TDAddTaskSection />
       </TDFullWidth>
     </TasksDashboardContainer>
   )
