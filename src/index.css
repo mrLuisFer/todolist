@@ -7,6 +7,7 @@
   --dark-purple: #1a508b;
   --purple-blue: #185adb;
   --yellow: #ffc947;
+  --white: #ffffff;
 
   --bg-dark-blue: #0a1931;
 
@@ -37,7 +38,7 @@ body {
     'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: var(--light-white);
+  background: var(--white);
 }
 
 ol,

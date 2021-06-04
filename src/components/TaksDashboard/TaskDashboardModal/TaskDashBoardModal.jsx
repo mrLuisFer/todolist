@@ -3,7 +3,7 @@ import React from 'react'
 import TDAddTaskSection from '../TDAddTaskSection/TDAddTaskSection'
 
 import {
-  TasksDashboardContainer,
+  TasksDashboardModalContainer,
   TDInput,
   TDInputContainer,
   TDTaskDescription,
@@ -13,7 +13,7 @@ import {
 
 export default function TaskDashBoardModal() {
   return (
-    <TasksDashboardContainer>
+    <TasksDashboardModalContainer>
       <TDFullWidth>
         <TDInputContainer>
           <TDInput
@@ -35,6 +35,6 @@ export default function TaskDashBoardModal() {
         </TDTaskDescriptionContainer>
         <TDAddTaskSection />
       </TDFullWidth>
-    </TasksDashboardContainer>
+    </TasksDashboardModalContainer>
   )
 }

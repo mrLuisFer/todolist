@@ -2,12 +2,13 @@ import styled from 'styled-components'
 import { borderRadius } from 'styles/utils/borderRadius'
 import { paddingLayout } from 'styles/utils/paddingLayout'
 
-export const TasksDashboardContainer = styled.section`
+export const TasksDashboardModalContainer = styled.section`
   ${paddingLayout()}
 
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: var(--light-white);
 `
 
 export const TDFullWidth = styled.div`
