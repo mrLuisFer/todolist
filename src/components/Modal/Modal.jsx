@@ -22,9 +22,8 @@ export default function Modal({ jsxComponent, elementId = '', closeFunc }) {
         <ModalContainer>
           <ModalContent>
             <ModalCloseBtnContainer>
-              {/* TODO: update the styles  */}
               <ModalCloseBtn onClick={closeFunc}>
-                <i className='fas fa-times' title='Cancelar' />
+                <i className='fas fa-times' title='Cancel' />
               </ModalCloseBtn>
             </ModalCloseBtnContainer>
             {jsxComponent}

@@ -1,4 +1,6 @@
 import React from 'react'
+import { taskColors } from './taskColors'
+
 import {
   TDAddTaskSectionContainer,
   TDAddTaskColorsContainer,
@@ -11,12 +13,10 @@ import {
  * @returns JSX.Element
  */
 export default function TDAddTaskSection({ closeModalFunc }) {
-  const colors = ['var(--blue)', 'var(--green)', 'var(--important-color)']
-
   return (
     <TDAddTaskSectionContainer>
       <TDAddTaskColorsContainer>
-        {colors.map((color) => (
+        {taskColors.map((color) => (
           <TDAddTaskColor bgColor={color} key={color} title='Add a task-color' />
         ))}
       </TDAddTaskColorsContainer>
