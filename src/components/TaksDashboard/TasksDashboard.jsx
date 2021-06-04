@@ -4,12 +4,15 @@ import {
   TDInput,
   TDInputContainer,
   TDTaskDescription,
+  TDFullWidth,
+  TDTaskDescriptionContainer,
+  TDAddTaskSection,
 } from './TasksDashboard.styles'
 
 export default function TasksDashboard() {
   return (
     <TasksDashboardContainer>
-      <div>
+      <TDFullWidth>
         <TDInputContainer>
           <TDInput
             type='text'
@@ -19,20 +22,22 @@ export default function TasksDashboard() {
             required
           />
         </TDInputContainer>
-        <TDTaskDescription
-          name='task-description'
-          id='task-description'
-          cols='20'
-          rows='4'
-          placeholder='Some description?'
-        ></TDTaskDescription>
-        <div>
+        <TDTaskDescriptionContainer>
+          <TDTaskDescription
+            name='task-description'
+            id='task-description'
+            cols='20'
+            rows='4'
+            placeholder='Some description?'
+          ></TDTaskDescription>
+        </TDTaskDescriptionContainer>
+        <TDAddTaskSection>
           <button type='button'>
             <i className='far fa-plus-square' title='Add a task' />
             Add Task
           </button>
-        </div>
-      </div>
+        </TDAddTaskSection>
+      </TDFullWidth>
     </TasksDashboardContainer>
   )
 }
