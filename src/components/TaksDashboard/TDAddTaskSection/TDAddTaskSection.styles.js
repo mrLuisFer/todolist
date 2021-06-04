@@ -24,4 +24,14 @@ export const TDAddTaskColor = styled.div`
 
 export const TDAddTaskButton = styled.button`
   ${buttonStyle()}
+
+  background: var(--purple-blue);
+  padding: 0.8rem;
+  font-size: 1rem;
+  color: var(--text-white);
+
+  i {
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+  }
 `
