@@ -1,10 +1,10 @@
 import styled from 'styled-components'
+import { borderRadius } from 'styles/utils/borderRadius'
 import { userNoSelect } from 'styles/utils/userNoSelect'
 
 export const ErrorMsgStyled = styled.div`
   align-items: center;
   background: var(--error-color);
-  border-radius: var(--sm-radius);
   border: 3px solid #f55c47;
   color: var(--text-white);
   column-gap: 0.6rem;
@@ -13,6 +13,7 @@ export const ErrorMsgStyled = styled.div`
   justify-content: flex-start;
   margin: ${(props) => props.marginSize || '0'};
   padding: 0.7rem 1rem;
+  ${borderRadius()}
 
   ${userNoSelect()}
 

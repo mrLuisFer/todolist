@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { borderRadius } from 'styles/utils/borderRadius'
 import { buttonStyle } from 'styles/utils/buttonStyled'
 import { paddingLayout } from 'styles/utils/paddingLayout'
 import { userNoSelect } from 'styles/utils/userNoSelect'
@@ -42,14 +43,14 @@ export const LoginFormInput = styled.input`
   transition: var(--transition);
   width: 100%;
   margin-top: 1rem;
-  border-radius: var(--sm-radius);
+  ${borderRadius()}
 
   &:hover {
     box-shadow: 1px 1px 7px var(--shadow-color);
   }
 
   &:focus {
-    border-radius: var(--m-radius);
+    ${borderRadius('var(--m-radius)')}
   }
 
   &:disabled {

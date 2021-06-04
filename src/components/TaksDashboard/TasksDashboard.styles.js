@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { borderRadius } from 'styles/utils/borderRadius'
 import { paddingLayout } from 'styles/utils/paddingLayout'
 
 export const TasksDashboardContainer = styled.section`
@@ -14,7 +15,7 @@ export const TDFullWidth = styled.div`
 `
 
 export const TDInputContainer = styled.div`
-  border-radius: var(--sm-radius);
+  ${borderRadius()}
   box-shadow: 0.2px 0.5px 2px var(--shadow-color);
   display: block;
   padding: 0.5rem 0.8rem;
@@ -41,10 +42,8 @@ export const TDInput = styled.input`
 export const TDTaskDescriptionContainer = styled.div`
   border: 1px solid rgba(0, 0, 0, 0.8);
   margin: 1rem 0;
-  border-radius: var(--m-radius);
-  -webkit-border-radius: var(--m-radius);
-  -moz-border-radius: var(--m-radius);
   padding: 0.5rem;
+  ${borderRadius('var(--m-radius)')}
 `
 
 export const TDTaskDescription = styled.textarea`

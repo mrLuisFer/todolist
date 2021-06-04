@@ -1,10 +1,10 @@
 import styled, { keyframes } from 'styled-components'
 import { userNoSelect } from 'styles/utils/userNoSelect'
 import { Link } from 'react-router-dom'
+import { borderRadius } from 'styles/utils/borderRadius'
 
 export const NavInfoContainer = styled.nav`
   background: var(--bg-dark-blue);
-  border-radius: var(--sm-radius);
   display: block;
   left: -25vw;
   padding: 0;
@@ -13,6 +13,8 @@ export const NavInfoContainer = styled.nav`
   width: -moz-available; /* WebKit-based browsers will ignore this. */
   width: -webkit-fill-available; /* Mozilla-based browsers will ignore this. */
   width: max-content;
+
+  ${borderRadius()}
 `
 
 const fade = keyframes`
@@ -28,7 +30,6 @@ const fade = keyframes`
 export const NavInfoListElement = styled.li`
   align-items: center;
   background: var(--bg-dark-blue);
-  border-radius: var(--sm-radius);
   color: var(--text-white);
   cursor: pointer;
   display: flex;
@@ -37,6 +38,8 @@ export const NavInfoListElement = styled.li`
   padding: 0.8rem 0.5rem;
   transition: var(--transition);
   min-width: 90px;
+
+  ${borderRadius()}
 
   animation: ${fade} 0.2s ease;
 
