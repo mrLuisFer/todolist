@@ -18,10 +18,13 @@ export const TDFullWidth = styled.div`
 export const TDInputContainer = styled.div`
   ${borderRadius()}
   box-shadow: 0.2px 0.5px 2px var(--shadow-color);
-  display: block;
   padding: 0.5rem 0.8rem;
   width: 100%;
+  height: 45px;
   border: 1px solid rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
   &:hover {
     box-shadow: 0.5px 1px 4px var(--shadow-color);
@@ -59,4 +62,7 @@ export const TDTaskDescription = styled.textarea`
   line-height: 1.5;
   letter-spacing: normal;
   border-collapse: collapse;
+  font-weight: 400;
+  font-family: var(--font-family);
+  height: 120px;
 `

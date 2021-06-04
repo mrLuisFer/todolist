@@ -12,6 +12,12 @@ import {
 } from './TaskDashboardModal.styles'
 
 export default function TaskDashBoardModal({ closeModalFunc }) {
+  const handleEnterKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      closeModalFunc()
+    }
+  }
+
   return (
     <TasksDashboardModalContainer>
       <TDFullWidth>
@@ -22,7 +28,10 @@ export default function TaskDashBoardModal({ closeModalFunc }) {
             id='task-input'
             placeholder='Add task...'
             required
+            autoComplete='off'
+            onKeyDown={handleEnterKeyDown}
           />
+          <i className='fas fa-info-circle' />
         </TDInputContainer>
         <TDTaskDescriptionContainer>
           <TDTaskDescription
