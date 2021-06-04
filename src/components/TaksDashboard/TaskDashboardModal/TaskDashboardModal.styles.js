@@ -37,10 +37,22 @@ export const TDInput = styled.input`
   outline: none;
   width: 100%;
   border: none;
+  padding-right: 0.3rem;
 
   &::placeholder {
     color: var(--text-black);
     opacity: 0.7;
+  }
+`
+
+export const TDInputInfo = styled.i`
+  color: var(--dark-purple);
+  transition: var(--transition);
+  cursor: pointer;
+  font-size: 1.1rem;
+
+  &:hover {
+    color: var(--purple-blue);
   }
 `
 
@@ -65,15 +77,4 @@ export const TDTaskDescription = styled.textarea`
   font-weight: 400;
   font-family: var(--font-family);
   height: 120px;
-`
-
-export const TDInputInfo = styled.i`
-  color: var(--dark-purple);
-  transition: var(--transition);
-  cursor: pointer;
-  font-size: 1.1rem;
-
-  &:hover {
-    color: var(--purple-blue);
-  }
 `
