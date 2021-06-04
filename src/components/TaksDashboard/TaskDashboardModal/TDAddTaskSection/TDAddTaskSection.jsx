@@ -16,8 +16,12 @@ export default function TDAddTaskSection({ closeModalFunc }) {
   return (
     <TDAddTaskSectionContainer>
       <TDAddTaskColorsContainer>
-        {taskColors.map((color) => (
-          <TDAddTaskColor bgColor={color} key={color} title='Add a task-color' />
+        {taskColors.map((taskColor) => (
+          <TDAddTaskColor
+            bgColor={taskColor.color}
+            key={taskColor.color}
+            title={taskColor.titleInfo}
+          />
         ))}
       </TDAddTaskColorsContainer>
       <TDAddTaskButton type='button' onClick={closeModalFunc}>
