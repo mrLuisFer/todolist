@@ -27,7 +27,7 @@ export const TDTaskDescription = styled.textarea`
 
 export const TDOpenDescriptionBtn = styled.button`
   ${buttonStyle()};
-  padding: 1rem 0.7rem;
+  padding: 1.2rem 0.7rem;
   margin: 1rem 0;
   font-size: 1rem;
   font-weight: 400;

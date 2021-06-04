@@ -27,8 +27,9 @@ export const ModalContent = styled.div`
 `
 
 export const ModalCloseBtnContainer = styled.div`
+  ${paddingLayout('0')};
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
 `
 

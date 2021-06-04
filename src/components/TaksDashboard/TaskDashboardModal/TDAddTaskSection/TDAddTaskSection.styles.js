@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { borderRadius } from 'styles/utils/borderRadius'
 import { buttonStyle } from 'styles/utils/buttonStyled'
+import { userNoSelect } from 'styles/utils/userNoSelect'
 
 export const TDAddTaskSectionContainer = styled.div`
   display: flex;
@@ -19,11 +20,12 @@ export const TDAddTaskColor = styled.div`
   width: 30px;
   background: ${(props) => props.bgColor};
   cursor: pointer;
-  ${borderRadius('100%')}
+  ${borderRadius('100%')};
+  ${userNoSelect()}
 `
 
 export const TDAddTaskButton = styled.button`
-  ${buttonStyle()}
+  ${buttonStyle()};
 
   background: var(--purple-blue);
   padding: 0.8rem;
