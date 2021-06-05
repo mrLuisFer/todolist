@@ -15,9 +15,9 @@ export default function TaskDashBoardModal({ closeModalFunc }) {
   return (
     <TasksDashboardModalContainer>
       <TDFullWidth>
-        <TaskDashboardInputSection closeModalFunc={closeModalFunc} />
-        <TaskDashboardDescriptionSection closeModalFunc={closeModalFunc} />
-        <TDAddTaskSection closeModalFunc={closeModalFunc} />
+        <TaskDashboardInputSection />
+        <TaskDashboardDescriptionSection />
+        <TDAddTaskSection />
       </TDFullWidth>
     </TasksDashboardModalContainer>
   )

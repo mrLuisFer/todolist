@@ -11,11 +11,15 @@ import {
  * @param {Function} closeModalFunc
  * @returns JSX.Element
  */
-export default function index({ closeModalFunc }) {
+export default function index() {
   const handleEnterKeyDown = (e) => {
     if (e.key === 'Enter') {
-      closeModalFunc()
+      console.log('enter')
     }
+  }
+
+  const handleChangeTaskValue = (e) => {
+    console.log(e.target.value)
   }
 
   return (
@@ -28,6 +32,8 @@ export default function index({ closeModalFunc }) {
         required
         autoComplete='off'
         onKeyDown={handleEnterKeyDown}
+        value=''
+        onChange={handleChangeTaskValue}
       />
       <TDInputInfo className='fas fa-info-circle' title='Press Enter for add the task' />
     </TDInputContainer>

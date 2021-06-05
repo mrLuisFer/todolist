@@ -22,6 +22,10 @@ export default function TaskDashboardDescriptionSection() {
     setShowDescription(false)
   }, [])
 
+  const handleChangeDescriptionValue = (e) => {
+    console.log(e.target.value)
+  }
+
   return (
     <div>
       {showDescription ? (
@@ -42,6 +46,8 @@ export default function TaskDashboardDescriptionSection() {
             cols='20'
             rows='4'
             placeholder='Some description?'
+            value={''}
+            onChange={handleChangeDescriptionValue}
           ></TDTaskDescription>
         </TDTaskDescriptionContainer>
       ) : (
