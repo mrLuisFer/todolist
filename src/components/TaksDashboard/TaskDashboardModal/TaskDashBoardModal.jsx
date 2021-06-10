@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { nanoid } from 'nanoid'
 
 import {
   TDInputInfo,
@@ -30,17 +31,28 @@ import { TasksDashboardModalContainer, TDFullWidth } from './TaskDashboardModal.
  * @returns JSX.Element
  */
 export default function TaskDashBoardModal({ closeModalFunc }) {
-  const handleEnterKeyDown = (e) => {
-    if (e.key === 'Enter') {
-      console.log('enter')
-    }
-  }
+  const [showDescription, setShowDescription] = useState(false)
+  const [taskInput, setTaskInput] = useState('')
+  const [descriptionInput, setDescriptionInput] = useState('')
+  const [taskValue, setTaskValue] = useState([
+    {
+      task: 'Example',
+      description: 'Add a new task',
+      id: 0,
+    },
+  ])
 
   const handleChangeTaskValue = (e) => {
-    console.log(e.target.value)
+    const eventValue = e.target.value
+    console.log(eventValue)
+    setTaskInput(eventValue)
   }
 
-  const [showDescription, setShowDescription] = useState(false)
+  const handleChangeDescriptionValue = (e) => {
+    const eventValue = e.target.value
+    console.log(eventValue)
+    setDescriptionInput(eventValue)
+  }
 
   const handleShowDescription = () => {
     setShowDescription(true)
@@ -54,13 +66,29 @@ export default function TaskDashBoardModal({ closeModalFunc }) {
     setShowDescription(false)
   }, [])
 
-  const handleChangeDescriptionValue = (e) => {
-    console.log(e.target.value)
+  const submitTaskValue = () => {
+    if (taskInput.length > 2) {
+      setTaskValue([
+        ...taskValue,
+        { task: taskInput, description: descriptionInput, id: nanoid() },
+      ])
+      console.log(taskValue)
+      setTaskInput('')
+      setDescriptionInput('')
+    }
+  }
+
+  const handleEnterKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      console.log('enter')
+      submitTaskValue()
+    }
   }
 
   return (
     <TasksDashboardModalContainer>
       <TDFullWidth>
+        {/* * * * * * * * * * * * * * * * * * * * * * * * * *  * * * */}
         {/* * * * * * * * * * * * * * * * * * * * * * * * * *  * * * */}
         <TDInputContainer>
           <TDInput
@@ -71,7 +99,7 @@ export default function TaskDashBoardModal({ closeModalFunc }) {
             required
             autoComplete='off'
             onKeyDown={handleEnterKeyDown}
-            value=''
+            value={taskInput}
             onChange={handleChangeTaskValue}
           />
           <TDInputInfo
@@ -100,7 +128,7 @@ export default function TaskDashBoardModal({ closeModalFunc }) {
                 cols='20'
                 rows='4'
                 placeholder='Some description?'
-                value={''}
+                value={descriptionInput}
                 onChange={handleChangeDescriptionValue}
               ></TDTaskDescription>
             </TDTaskDescriptionContainer>
@@ -120,7 +148,7 @@ export default function TaskDashBoardModal({ closeModalFunc }) {
               />
             ))}
           </TDAddTaskColorsContainer>
-          <TDAddTaskButton type='button'>
+          <TDAddTaskButton type='button' onClick={submitTaskValue}>
             <i className='far fa-plus-square' title='Add a task' />
             Add Task
           </TDAddTaskButton>
