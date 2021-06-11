@@ -1,12 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { nanoid } from 'nanoid'
 
-import {
-  TDInputInfo,
-  TDInput,
-  TDInputContainer,
-} from './TaskDashboardInputSection/TaskDashboardInputSection.styles'
-
+import TaskDashboardInputSection from './TaskDashboardInputSection/TaskDashboardInputSection'
 import TaskDashboardDescriptionSection from './TaskDashboardDescriptionSection/TaskDashboardDescriptionSection'
 import TDAddTaskSection from './TDAddTaskSection/TDAddTaskSection'
 
@@ -24,7 +19,7 @@ export default function TaskDashBoardModal() {
     {
       task: 'Example',
       description: 'Add a new task',
-      id: 0,
+      id: '0',
     },
   ])
 
@@ -65,25 +60,11 @@ export default function TaskDashBoardModal() {
     <TasksDashboardModalContainer>
       <TDFullWidth>
         {/* * * * * * * * * * * * * * * * * * * * * * * * * *  * * * */}
-        {/* * * * * * * * * * * * * * * * * * * * * * * * * *  * * * */}
-        <TDInputContainer>
-          <TDInput
-            type='text'
-            name='task-input'
-            id='task-input'
-            placeholder='Add task...'
-            required
-            autoComplete='off'
-            onKeyDown={handleEnterKeyDown}
-            value={taskInput}
-            onChange={handleChangeTaskValue}
-          />
-          <TDInputInfo
-            className='fas fa-info-circle'
-            title='Press Enter for add the task'
-          />
-        </TDInputContainer>
-        {/* * * * * * * * * * * * * * * * * * * * * * * * * *  * * * */}
+        <TaskDashboardInputSection
+          handleEnterKeyDown={handleEnterKeyDown}
+          taskInput={taskInput}
+          handleChangeTaskValue={handleChangeTaskValue}
+        />
         {/* * * * * * * * * * * * * * * * * * * * * * * * * *  * * * */}
         <TaskDashboardDescriptionSection
           showDescription={showDescription}
@@ -92,9 +73,7 @@ export default function TaskDashBoardModal() {
           handleChangeDescriptionValue={handleChangeDescriptionValue}
         />
         {/* * * * * * * * * * * * * * * * * * * * * * * * * *  * * * */}
-        {/* * * * * * * * * * * * * * * * * * * * * * * * * *  * * * */}
         <TDAddTaskSection submitTaskValue={submitTaskValue} />
-        {/* * * * * * * * * * * * * * * * * * * * * * * * * *  * * * */}
         {/* * * * * * * * * * * * * * * * * * * * * * * * * *  * * * */}
       </TDFullWidth>
     </TasksDashboardModalContainer>
