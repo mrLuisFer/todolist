@@ -7,30 +7,16 @@ import {
   TDInputContainer,
 } from './TaskDashboardInputSection/TaskDashboardInputSection.styles'
 
-import {
-  TDTaskDescriptionContainer,
-  TDTaskDescription,
-  TDOpenDescriptionBtn,
-  TDCloseDescriptionBtn,
-} from './TaskDashboardDescriptionSection/TaskDashboardDescriptionSection.styles'
-
-import { taskColors } from './TDAddTaskSection/taskColors'
-
-import {
-  TDAddTaskSectionContainer,
-  TDAddTaskColorsContainer,
-  TDAddTaskColor,
-  TDAddTaskButton,
-} from './TDAddTaskSection/TDAddTaskSection.styles'
+import TaskDashboardDescriptionSection from './TaskDashboardDescriptionSection/TaskDashboardDescriptionSection'
+import TDAddTaskSection from './TDAddTaskSection/TDAddTaskSection'
 
 import { TasksDashboardModalContainer, TDFullWidth } from './TaskDashboardModal.styles'
 
 /**
  *
- * @param {Function} closeModalFunc
  * @returns JSX.Element
  */
-export default function TaskDashBoardModal({ closeModalFunc }) {
+export default function TaskDashBoardModal() {
   const [showDescription, setShowDescription] = useState(false)
   const [taskInput, setTaskInput] = useState('')
   const [descriptionInput, setDescriptionInput] = useState('')
@@ -44,22 +30,12 @@ export default function TaskDashBoardModal({ closeModalFunc }) {
 
   const handleChangeTaskValue = (e) => {
     const eventValue = e.target.value
-    console.log(eventValue)
     setTaskInput(eventValue)
   }
 
   const handleChangeDescriptionValue = (e) => {
     const eventValue = e.target.value
-    console.log(eventValue)
     setDescriptionInput(eventValue)
-  }
-
-  const handleShowDescription = () => {
-    setShowDescription(true)
-  }
-
-  const handleCloseDescription = () => {
-    setShowDescription(false)
   }
 
   useEffect(() => {
@@ -72,6 +48,7 @@ export default function TaskDashBoardModal({ closeModalFunc }) {
         ...taskValue,
         { task: taskInput, description: descriptionInput, id: nanoid() },
       ])
+
       console.log(taskValue)
       setTaskInput('')
       setDescriptionInput('')
@@ -80,7 +57,6 @@ export default function TaskDashBoardModal({ closeModalFunc }) {
 
   const handleEnterKeyDown = (e) => {
     if (e.key === 'Enter') {
-      console.log('enter')
       submitTaskValue()
     }
   }
@@ -109,50 +85,15 @@ export default function TaskDashBoardModal({ closeModalFunc }) {
         </TDInputContainer>
         {/* * * * * * * * * * * * * * * * * * * * * * * * * *  * * * */}
         {/* * * * * * * * * * * * * * * * * * * * * * * * * *  * * * */}
-        <div>
-          {showDescription ? (
-            ''
-          ) : (
-            <TDOpenDescriptionBtn onClick={handleShowDescription}>
-              Description?
-            </TDOpenDescriptionBtn>
-          )}
-          {showDescription ? (
-            <TDTaskDescriptionContainer>
-              <TDCloseDescriptionBtn onClick={handleCloseDescription}>
-                <i className='fas fa-times' title='Cancel Description' />
-              </TDCloseDescriptionBtn>
-              <TDTaskDescription
-                name='task-description'
-                id='task-description'
-                cols='20'
-                rows='4'
-                placeholder='Some description?'
-                value={descriptionInput}
-                onChange={handleChangeDescriptionValue}
-              ></TDTaskDescription>
-            </TDTaskDescriptionContainer>
-          ) : (
-            ''
-          )}
-        </div>
+        <TaskDashboardDescriptionSection
+          showDescription={showDescription}
+          setShowDescription={setShowDescription}
+          descriptionInput={descriptionInput}
+          handleChangeDescriptionValue={handleChangeDescriptionValue}
+        />
         {/* * * * * * * * * * * * * * * * * * * * * * * * * *  * * * */}
         {/* * * * * * * * * * * * * * * * * * * * * * * * * *  * * * */}
-        <TDAddTaskSectionContainer>
-          <TDAddTaskColorsContainer>
-            {taskColors.map((taskColor) => (
-              <TDAddTaskColor
-                bgColor={taskColor.color}
-                key={taskColor.color}
-                title={taskColor.titleInfo}
-              />
-            ))}
-          </TDAddTaskColorsContainer>
-          <TDAddTaskButton type='button' onClick={submitTaskValue}>
-            <i className='far fa-plus-square' title='Add a task' />
-            Add Task
-          </TDAddTaskButton>
-        </TDAddTaskSectionContainer>
+        <TDAddTaskSection submitTaskValue={submitTaskValue} />
         {/* * * * * * * * * * * * * * * * * * * * * * * * * *  * * * */}
         {/* * * * * * * * * * * * * * * * * * * * * * * * * *  * * * */}
       </TDFullWidth>
