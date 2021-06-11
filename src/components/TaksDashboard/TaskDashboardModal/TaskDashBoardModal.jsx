@@ -1,131 +1,79 @@
 import React, { useEffect, useState } from 'react'
+import { nanoid } from 'nanoid'
 
-import {
-  TDInputInfo,
-  TDInput,
-  TDInputContainer,
-} from './TaskDashboardInputSection/TaskDashboardInputSection.styles'
-
-import {
-  TDTaskDescriptionContainer,
-  TDTaskDescription,
-  TDOpenDescriptionBtn,
-  TDCloseDescriptionBtn,
-} from './TaskDashboardDescriptionSection/TaskDashboardDescriptionSection.styles'
-
-import { taskColors } from './TDAddTaskSection/taskColors'
-
-import {
-  TDAddTaskSectionContainer,
-  TDAddTaskColorsContainer,
-  TDAddTaskColor,
-  TDAddTaskButton,
-} from './TDAddTaskSection/TDAddTaskSection.styles'
+import TaskDashboardInputSection from './TaskDashboardInputSection/TaskDashboardInputSection'
+import TaskDashboardDescriptionSection from './TaskDashboardDescriptionSection/TaskDashboardDescriptionSection'
+import TDAddTaskSection from './TDAddTaskSection/TDAddTaskSection'
 
 import { TasksDashboardModalContainer, TDFullWidth } from './TaskDashboardModal.styles'
 
 /**
  *
- * @param {Function} closeModalFunc
  * @returns JSX.Element
  */
-export default function TaskDashBoardModal({ closeModalFunc }) {
-  const handleEnterKeyDown = (e) => {
-    if (e.key === 'Enter') {
-      console.log('enter')
-    }
-  }
+export default function TaskDashBoardModal() {
+  const [showDescription, setShowDescription] = useState(false)
+  const [taskInput, setTaskInput] = useState('')
+  const [descriptionInput, setDescriptionInput] = useState('')
+  const [taskValue, setTaskValue] = useState([
+    {
+      task: 'Example',
+      description: 'Add a new task',
+      id: '0',
+    },
+  ])
 
   const handleChangeTaskValue = (e) => {
-    console.log(e.target.value)
+    const eventValue = e.target.value
+    setTaskInput(eventValue)
   }
 
-  const [showDescription, setShowDescription] = useState(false)
-
-  const handleShowDescription = () => {
-    setShowDescription(true)
-  }
-
-  const handleCloseDescription = () => {
-    setShowDescription(false)
+  const handleChangeDescriptionValue = (e) => {
+    const eventValue = e.target.value
+    setDescriptionInput(eventValue)
   }
 
   useEffect(() => {
     setShowDescription(false)
   }, [])
 
-  const handleChangeDescriptionValue = (e) => {
-    console.log(e.target.value)
+  const submitTaskValue = () => {
+    if (taskInput.length > 2) {
+      setTaskValue([
+        ...taskValue,
+        { task: taskInput, description: descriptionInput, id: nanoid() },
+      ])
+
+      console.log(taskValue)
+      setTaskInput('')
+      setDescriptionInput('')
+    }
+  }
+
+  const handleEnterKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      submitTaskValue()
+    }
   }
 
   return (
     <TasksDashboardModalContainer>
       <TDFullWidth>
         {/* * * * * * * * * * * * * * * * * * * * * * * * * *  * * * */}
-        <TDInputContainer>
-          <TDInput
-            type='text'
-            name='task-input'
-            id='task-input'
-            placeholder='Add task...'
-            required
-            autoComplete='off'
-            onKeyDown={handleEnterKeyDown}
-            value=''
-            onChange={handleChangeTaskValue}
-          />
-          <TDInputInfo
-            className='fas fa-info-circle'
-            title='Press Enter for add the task'
-          />
-        </TDInputContainer>
+        <TaskDashboardInputSection
+          handleEnterKeyDown={handleEnterKeyDown}
+          taskInput={taskInput}
+          handleChangeTaskValue={handleChangeTaskValue}
+        />
         {/* * * * * * * * * * * * * * * * * * * * * * * * * *  * * * */}
+        <TaskDashboardDescriptionSection
+          showDescription={showDescription}
+          setShowDescription={setShowDescription}
+          descriptionInput={descriptionInput}
+          handleChangeDescriptionValue={handleChangeDescriptionValue}
+        />
         {/* * * * * * * * * * * * * * * * * * * * * * * * * *  * * * */}
-        <div>
-          {showDescription ? (
-            ''
-          ) : (
-            <TDOpenDescriptionBtn onClick={handleShowDescription}>
-              Description?
-            </TDOpenDescriptionBtn>
-          )}
-          {showDescription ? (
-            <TDTaskDescriptionContainer>
-              <TDCloseDescriptionBtn onClick={handleCloseDescription}>
-                <i className='fas fa-times' title='Cancel Description' />
-              </TDCloseDescriptionBtn>
-              <TDTaskDescription
-                name='task-description'
-                id='task-description'
-                cols='20'
-                rows='4'
-                placeholder='Some description?'
-                value={''}
-                onChange={handleChangeDescriptionValue}
-              ></TDTaskDescription>
-            </TDTaskDescriptionContainer>
-          ) : (
-            ''
-          )}
-        </div>
-        {/* * * * * * * * * * * * * * * * * * * * * * * * * *  * * * */}
-        {/* * * * * * * * * * * * * * * * * * * * * * * * * *  * * * */}
-        <TDAddTaskSectionContainer>
-          <TDAddTaskColorsContainer>
-            {taskColors.map((taskColor) => (
-              <TDAddTaskColor
-                bgColor={taskColor.color}
-                key={taskColor.color}
-                title={taskColor.titleInfo}
-              />
-            ))}
-          </TDAddTaskColorsContainer>
-          <TDAddTaskButton type='button'>
-            <i className='far fa-plus-square' title='Add a task' />
-            Add Task
-          </TDAddTaskButton>
-        </TDAddTaskSectionContainer>
-        {/* * * * * * * * * * * * * * * * * * * * * * * * * *  * * * */}
+        <TDAddTaskSection submitTaskValue={submitTaskValue} />
         {/* * * * * * * * * * * * * * * * * * * * * * * * * *  * * * */}
       </TDFullWidth>
     </TasksDashboardModalContainer>
