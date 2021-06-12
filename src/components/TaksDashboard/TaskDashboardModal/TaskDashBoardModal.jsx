@@ -30,6 +30,7 @@ export default function TaskDashBoardModal({ taskValue, setTaskValue }) {
     setShowDescription(false)
   }, [])
 
+  // TODO: check that the same task is not rendered, but the following
   const submitTaskValue = () => {
     if (taskInput.length > 2) {
       setTaskValue([

@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from 'react'
-import { ListTodosStyled } from './ListTodos.styles.jsx'
+import React from 'react'
+import Todo from './Todo/Todo'
 
-export default function ListTodos({tasksValue}) {
+import { ListTodosStyled } from './ListTodos.styles.js'
 
+export default function ListTodos({ tasksValue }) {
   return (
     <ListTodosStyled>
       <p>List of the todos will be here</p>
       {tasksValue.map((todoValue) => (
-        <div key={todoValue.id}>{todoValue.task}</div>
+        <Todo key={todoValue.id} taskTitle={todoValue.task} />
       ))}
     </ListTodosStyled>
   )
