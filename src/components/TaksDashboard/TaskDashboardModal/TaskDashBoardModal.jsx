@@ -33,7 +33,7 @@ export default function TaskDashBoardModal({ taskValue, setTaskValue }) {
   // TODO: check that the same task is not rendered, but the following
   const submitTaskValue = async () => {
     if (taskInput.length > 2) {
-      setTaskValue((prevTaskValue) => [
+      await setTaskValue((prevTaskValue) => [
         { task: taskInput, description: descriptionInput, id: nanoid() },
         ...prevTaskValue,
       ])
