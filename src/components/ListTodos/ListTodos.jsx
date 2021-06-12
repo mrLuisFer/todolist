@@ -8,7 +8,7 @@ export default function ListTodos({ tasksValue }) {
     <ListTodosStyled>
       <p>List of the todos will be here</p>
       {tasksValue.map((todoValue) => (
-        <Todo key={todoValue.id} taskTitle={todoValue.task} />
+        <Todo key={todoValue.id} taskTitle={todoValue.task} id={todoValue.id} />
       ))}
     </ListTodosStyled>
   )

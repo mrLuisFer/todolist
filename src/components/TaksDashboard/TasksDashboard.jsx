@@ -25,8 +25,19 @@ export default function TasksDashboard() {
     setIsModalOpen(false)
   }
 
+  const getTaskValue = () => {
+    const taskValues = localStorage.getItem('tasksValues')
+
+    if (taskValues !== null && taskValues !== undefined) {
+      console.log(taskValues)
+      setTaskValue(JSON.parse(taskValues))
+    }
+    return
+  }
+
   useEffect(() => {
     handleCloseModal()
+    getTaskValue()
   }, [])
 
   return (

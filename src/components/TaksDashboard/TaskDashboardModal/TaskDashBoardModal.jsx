@@ -31,24 +31,22 @@ export default function TaskDashBoardModal({ taskValue, setTaskValue }) {
   }, [])
 
   // TODO: check that the same task is not rendered, but the following
-  const submitTaskValue = () => {
+  const submitTaskValue = async () => {
     if (taskInput.length > 2) {
-      setTaskValue([
-        ...taskValue,
+      setTaskValue((prevTaskValue) => [
         { task: taskInput, description: descriptionInput, id: nanoid() },
+        ...prevTaskValue,
       ])
 
       try {
         localStorage.setItem('tasksValues', JSON.stringify(taskValue))
+        setTaskInput('')
+        setDescriptionInput('')
       } catch (error) {
         console.log(error)
       }
 
-      console.log(localStorage.getItem('tasksValues'))
-
       console.log(taskValue)
-      setTaskInput('')
-      setDescriptionInput('')
     }
   }
 
