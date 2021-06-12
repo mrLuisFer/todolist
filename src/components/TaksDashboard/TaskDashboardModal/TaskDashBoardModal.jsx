@@ -11,17 +11,10 @@ import { TasksDashboardModalContainer, TDFullWidth } from './TaskDashboardModal.
  *
  * @returns JSX.Element
  */
-export default function TaskDashBoardModal() {
+export default function TaskDashBoardModal({ taskValue, setTaskValue }) {
   const [showDescription, setShowDescription] = useState(false)
   const [taskInput, setTaskInput] = useState('')
   const [descriptionInput, setDescriptionInput] = useState('')
-  const [taskValue, setTaskValue] = useState([
-    {
-      task: 'Example',
-      description: 'Add a new task',
-      id: '0',
-    },
-  ])
 
   const handleChangeTaskValue = (e) => {
     const eventValue = e.target.value
@@ -46,12 +39,12 @@ export default function TaskDashBoardModal() {
 
       try {
         localStorage.setItem('tasksValues', JSON.stringify(taskValue))
-      } catch(error) {
+      } catch (error) {
         console.log(error)
       }
 
       console.log(localStorage.getItem('tasksValues'))
-      
+
       console.log(taskValue)
       setTaskInput('')
       setDescriptionInput('')
