@@ -44,6 +44,14 @@ export default function TaskDashBoardModal() {
         { task: taskInput, description: descriptionInput, id: nanoid() },
       ])
 
+      try {
+        localStorage.setItem('tasksValues', JSON.stringify(taskValue))
+      } catch(error) {
+        console.log(error)
+      }
+
+      console.log(localStorage.getItem('tasksValues'))
+      
       console.log(taskValue)
       setTaskInput('')
       setDescriptionInput('')

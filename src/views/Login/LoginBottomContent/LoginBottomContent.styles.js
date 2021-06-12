@@ -55,6 +55,7 @@ export const LoginFormInput = styled.input`
 
   &:disabled {
     border-color: var(--error-color);
+    cursor: not-allowed;
   }
 
   &:focus ~ ${LoginFormLabel}, &:valid ~ ${LoginFormLabel} {
