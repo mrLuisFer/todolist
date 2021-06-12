@@ -37,6 +37,10 @@
   scrollbar-width: thin;
 }
 
+*:focus-visible {
+  outline: 1px solid #185adb;
+}
+
 body {
   margin: 0;
   font-family: var(--font-family);
