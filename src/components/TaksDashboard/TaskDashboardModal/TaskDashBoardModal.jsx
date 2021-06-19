@@ -5,7 +5,10 @@ import TaskDashboardInputSection from './TaskDashboardInputSection/TaskDashboard
 import TaskDashboardDescriptionSection from './TaskDashboardDescriptionSection/TaskDashboardDescriptionSection'
 import TDAddTaskSection from './TDAddTaskSection/TDAddTaskSection'
 
-import { TasksDashboardModalContainer, TDFullWidth } from './TaskDashboardModal.styles'
+import {
+  TasksDashboardModalContainer,
+  TDFullWidth,
+} from './TaskDashboardModal.styles'
 
 /**
  *
