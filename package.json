@@ -19,7 +19,8 @@
     "build": "react-scripts  build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "format": "npx prettier --write ."
+    "format": "npx prettier --write .",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -48,8 +49,14 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-react": "^7.24.0",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
     "postcss": "^7.0.35",
     "prettier": "2.3.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.2"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.{js,css,md}": "prettier --write"
   }
 }
