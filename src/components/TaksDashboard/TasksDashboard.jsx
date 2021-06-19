@@ -4,7 +4,10 @@ import Modal from 'components/Modal/Modal'
 import TaskDashBoardModal from './TaskDashboardModal/TaskDashBoardModal'
 import ListTodos from '../ListTodos/ListTodos.jsx'
 
-import { TasksDashboardContainer, TasksDashboardButton } from './TasksDashboard.styles'
+import {
+  TasksDashboardContainer,
+  TasksDashboardButton,
+} from './TasksDashboard.styles'
 
 export default function TasksDashboard() {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -32,7 +35,6 @@ export default function TasksDashboard() {
       console.log(taskValues)
       setTaskValue(JSON.parse(taskValues))
     }
-    return
   }
 
   useEffect(() => {
@@ -42,16 +44,19 @@ export default function TasksDashboard() {
 
   return (
     <TasksDashboardContainer>
-      <TasksDashboardButton type='button' onClick={handleOpenModal}>
-        <i className='fas fa-plus' title='Click to add a task' />
+      <TasksDashboardButton type="button" onClick={handleOpenModal}>
+        <i className="fas fa-plus" title="Click to add a task" />
         Add task
       </TasksDashboardButton>
       {isModalOpen ? (
         <Modal
           jsxComponent={
-            <TaskDashBoardModal taskValue={taskValue} setTaskValue={setTaskValue} />
+            <TaskDashBoardModal
+              taskValue={taskValue}
+              setTaskValue={setTaskValue}
+            />
           }
-          elementId='task-modal'
+          elementId="task-modal"
           closeFunc={handleCloseModal}
         />
       ) : (

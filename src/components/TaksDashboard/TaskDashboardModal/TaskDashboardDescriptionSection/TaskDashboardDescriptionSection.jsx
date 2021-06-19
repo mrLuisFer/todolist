@@ -33,14 +33,14 @@ export default function TaskDashboardDescriptionSection({
       {showDescription ? (
         <TDTaskDescriptionContainer>
           <TDCloseDescriptionBtn onClick={handleCloseDescription}>
-            <i className='fas fa-times' title='Cancel Description' />
+            <i className="fas fa-times" title="Cancel Description" />
           </TDCloseDescriptionBtn>
           <TDTaskDescription
-            name='task-description'
-            id='task-description'
-            cols='20'
-            rows='4'
-            placeholder='Some description?'
+            name="task-description"
+            id="task-description"
+            cols="20"
+            rows="4"
+            placeholder="Some description?"
             value={descriptionInput}
             onChange={handleChangeDescriptionValue}
           ></TDTaskDescription>

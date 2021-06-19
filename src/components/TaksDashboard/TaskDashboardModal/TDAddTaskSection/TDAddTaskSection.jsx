@@ -20,8 +20,8 @@ export default function TDAddTaskSection({ submitTaskValue }) {
           />
         ))}
       </TDAddTaskColorsContainer>
-      <TDAddTaskButton type='button' onClick={submitTaskValue}>
-        <i className='far fa-plus-square' title='Add a task' />
+      <TDAddTaskButton type="button" onClick={submitTaskValue}>
+        <i className="far fa-plus-square" title="Add a task" />
         Add Task
       </TDAddTaskButton>
     </TDAddTaskSectionContainer>

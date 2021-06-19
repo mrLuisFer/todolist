@@ -18,17 +18,18 @@ export default function LoginTopContent() {
   return (
     <LoginTopContentStyled>
       <LoginTopTitle aria-hidden onClick={handleSecreteMsg}>
-        Welcome to the mrLuisFer's todo list!
+        Welcome to the {`mrLuisFer's`} todo list!
       </LoginTopTitle>
       {isSecretMsg ? (
         <LoginSecreteMsg className={`${pulse} ${faster}`}>
           <p>
-            This is a Todo created by LuisFer, adapted to the needs it represents as
-            Developer & Student. Obviously I could use already created
+            This is a Todo created by LuisFer, adapted to the needs it
+            represents as Developer & Student. Obviously I could use already
+            created
             <br />
             But why not?
           </p>
-          <LoginSecreteMsgButton type='button' onClick={closeSecretMsg}>
+          <LoginSecreteMsgButton type="button" onClick={closeSecretMsg}>
             Close message
           </LoginSecreteMsgButton>
         </LoginSecreteMsg>

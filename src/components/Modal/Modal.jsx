@@ -24,7 +24,7 @@ export default function Modal({ jsxComponent, elementId = '', closeFunc }) {
           <ModalContent className={`${fadeIn} ${faster}`}>
             <ModalCloseBtnContainer>
               <ModalCloseBtn onClick={closeFunc}>
-                <i className='fas fa-times' title='Cancel' />
+                <i className="fas fa-times" title="Cancel" />
               </ModalCloseBtn>
             </ModalCloseBtnContainer>
             {jsxComponent}

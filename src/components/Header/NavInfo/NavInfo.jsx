@@ -26,10 +26,12 @@ export default function InfoComponent() {
         {infoNav.map(({ linkName, url, icon }, id) => (
           <NavInfoListElement key={id} onClick={() => handleUrlToPush(url)}>
             {linkName}
-            {icon ? <i className='fas fa-caret-right'></i> : ''}
+            {icon ? <i className="fas fa-caret-right"></i> : ''}
           </NavInfoListElement>
         ))}
-        <NavInfoListElement onClick={deleteLocalStorageLogin}>Log Out</NavInfoListElement>
+        <NavInfoListElement onClick={deleteLocalStorageLogin}>
+          Log Out
+        </NavInfoListElement>
       </ul>
     </NavInfoContainer>
   )

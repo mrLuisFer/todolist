@@ -66,22 +66,22 @@ export default function LoginBottomContent() {
     <LoginBottomContentStyled>
       <LoginTitle className={bounce}>Login 🤗</LoginTitle>
       <LoginContentInput onSubmit={preventSubmitEvent}>
-        <LoginFormLabel htmlFor='username-input'>Username:</LoginFormLabel>
+        <LoginFormLabel htmlFor="username-input">Username:</LoginFormLabel>
         <LoginFormInput
           disabled={isError}
-          id='username-input'
-          name='username-input'
+          id="username-input"
+          name="username-input"
           onChange={handleChangeInputValue}
           require
-          type='text'
+          type="text"
           value={loginInputValue}
         />
         {isError ? (
-          <ErrorMsg marginSize='2rem 0'>Nombre de usuario invalido</ErrorMsg>
+          <ErrorMsg marginSize="2rem 0">Nombre de usuario invalido</ErrorMsg>
         ) : (
           ''
         )}
-        <LoginFormButton onClick={handlePushToHome} type='submit'>
+        <LoginFormButton onClick={handlePushToHome} type="submit">
           LOGIN
         </LoginFormButton>
       </LoginContentInput>

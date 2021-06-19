@@ -5,10 +5,10 @@ import Home from 'views/Home/Home'
 function App() {
   return (
     <Router>
-      <main className='App'>
+      <main className="App">
         <Switch>
-          <Route exact path='/' component={Login} />
-          <Route path='/home' component={Home} />
+          <Route exact path="/" component={Login} />
+          <Route path="/home" component={Home} />
         </Switch>
       </main>
     </Router>

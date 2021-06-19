@@ -10,7 +10,7 @@ import { ErrorMsgStyled } from './ErrorMsg.styles'
 export default function ErrorMsg({ children = 'Error', marginSize = '0' }) {
   return (
     <ErrorMsgStyled marginSize={marginSize}>
-      <i className='fas fa-exclamation'></i>
+      <i className="fas fa-exclamation"></i>
       <p>{children}</p>
     </ErrorMsgStyled>
   )

@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import NavInfo from './NavInfo/NavInfo'
 
-import { HContainer, HIcon, HTitle, HTitleSpan, HIconContainer } from './Header.styles'
+import {
+  HContainer,
+  HIcon,
+  HTitle,
+  HTitleSpan,
+  HIconContainer,
+} from './Header.styles'
 
 /**
  * @param {string} username
@@ -24,7 +30,7 @@ export default function Nav({ username = 'user' }) {
   return (
     <HContainer>
       <HTitle>
-        What's up, <HTitleSpan>{username}!</HTitleSpan>
+        {`What's`} up, <HTitleSpan>{username}!</HTitleSpan>
       </HTitle>
       <HIconContainer>
         <HIcon

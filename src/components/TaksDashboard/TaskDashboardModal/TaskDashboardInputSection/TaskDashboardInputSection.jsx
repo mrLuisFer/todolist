@@ -14,17 +14,20 @@ export default function TaskDashboardInputSection({
   return (
     <TDInputContainer>
       <TDInput
-        type='text'
-        name='task-input'
-        id='task-input'
-        placeholder='Add task...'
+        type="text"
+        name="task-input"
+        id="task-input"
+        placeholder="Add task..."
         required
-        autoComplete='off'
+        autoComplete="off"
         onKeyDown={handleEnterKeyDown}
         value={taskInput}
         onChange={handleChangeTaskValue}
       />
-      <TDInputInfo className='fas fa-info-circle' title='Press Enter for add the task' />
+      <TDInputInfo
+        className="fas fa-info-circle"
+        title="Press Enter for add the task"
+      />
     </TDInputContainer>
   )
 }
