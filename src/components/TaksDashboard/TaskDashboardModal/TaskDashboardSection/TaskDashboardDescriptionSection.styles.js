@@ -22,8 +22,15 @@ export const TDTaskDescription = styled.textarea`
   border-collapse: collapse;
   font-weight: 400;
   font-family: var(--font-family);
-  height: 120px;
+  height: ${(props) => `${props.textareaHeight}px` || '80px'};
   font-size: 1rem;
+
+  ${(props) =>
+    props.textareaHeight <= 80
+      ? css`
+          overflow: hidden;
+        `
+      : ''}
 `
 
 const commonDescriptionBtn = () => css`
@@ -37,6 +44,7 @@ export const TDOpenDescriptionBtn = styled.button`
   padding: 1.2rem 0.7rem;
   margin: 1rem 0;
   background: var(--grey);
+  text-transform: capitalize;
 `
 
 export const TDCloseDescriptionBtn = styled.button`

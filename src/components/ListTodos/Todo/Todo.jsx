@@ -1,8 +1,14 @@
 import React, { useState } from 'react'
+import { TodoInput } from './input.styles'
 
-import { LTTodoContainer, LTTodoDescription, LTTodoTitle } from './Todo.styles'
+import {
+  LTTodoContainer,
+  LTTodoDescription,
+  TodoLabel,
+  TodoFlex,
+} from './Todo.styles'
 
-export default function Todo({ taskTitle, description = '', id }) {
+export default function Todo({ taskTitle, description = '', id, date }) {
   const [inputCheck, setInputCheck] = useState(false)
 
   const handleIsTaskDonde = (event) => {
@@ -13,23 +19,23 @@ export default function Todo({ taskTitle, description = '', id }) {
 
   return (
     <LTTodoContainer key={id} isChecked={inputCheck}>
-      <div>
-        <LTTodoTitle isChecked={inputCheck}>
-          <input
-            type="checkbox"
-            name={`isTaskDone-${id}`}
-            id={`isTaskDone-${id}`}
-            onChange={handleIsTaskDonde}
-          />
-          <label htmlFor={`isTaskDone-${id}`}>{taskTitle}</label>
-        </LTTodoTitle>
-        <div></div>
-      </div>
+      <TodoFlex>
+        <TodoInput
+          type="checkbox"
+          name={`isTaskDone-${id}`}
+          id={`isTaskDone-${id}`}
+          onChange={handleIsTaskDonde}
+        />
+        <TodoLabel htmlFor={`isTaskDone-${id}`} isChecked={inputCheck}>
+          {taskTitle}
+        </TodoLabel>
+      </TodoFlex>
       {description.length > 5 ? (
         <LTTodoDescription>{description}</LTTodoDescription>
       ) : (
         ''
       )}
+      {date ? <p>{date}</p> : ''}
     </LTTodoContainer>
   )
 }

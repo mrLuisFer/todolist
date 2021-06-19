@@ -7,42 +7,54 @@ import {
   TDCloseDescriptionBtn,
 } from './TaskDashboardDescriptionSection.styles'
 
-export default function TaskDashboardDescriptionSection({
-  showDescription,
-  setShowDescription,
-  descriptionInput,
-  handleChangeDescriptionValue,
+/**
+ * @param {String} showSection
+ * @param {Function} setShowFunc
+ * @param {String} valueInput
+ * @param {Function} handleChangeValue
+ * @param {String} textShowed
+ * @param {Number} textareaHeight
+ * @returns {JSX.Element}
+ */
+export default function TaskDashboardSection({
+  showSection,
+  setShowFunc,
+  valueInput,
+  handleChangeValue,
+  textShowed = '',
+  textareaHeight,
 }) {
   const handleShowDescription = () => {
-    setShowDescription(true)
+    setShowFunc(true)
   }
 
   const handleCloseDescription = () => {
-    setShowDescription(false)
+    setShowFunc(false)
   }
 
   return (
     <div>
-      {showDescription ? (
+      {showSection ? (
         ''
       ) : (
         <TDOpenDescriptionBtn onClick={handleShowDescription}>
-          Description?
+          {textShowed}?
         </TDOpenDescriptionBtn>
       )}
-      {showDescription ? (
+      {showSection ? (
         <TDTaskDescriptionContainer>
           <TDCloseDescriptionBtn onClick={handleCloseDescription}>
-            <i className="fas fa-times" title="Cancel Description" />
+            <i className="fas fa-times" title="Cancel Section" />
           </TDCloseDescriptionBtn>
           <TDTaskDescription
             name="task-description"
             id="task-description"
             cols="20"
             rows="4"
-            placeholder="Some description?"
-            value={descriptionInput}
-            onChange={handleChangeDescriptionValue}
+            placeholder={`Some ${textShowed.toLocaleLowerCase()}?`}
+            value={valueInput}
+            onChange={handleChangeValue}
+            textareaHeight={textareaHeight}
           ></TDTaskDescription>
         </TDTaskDescriptionContainer>
       ) : (

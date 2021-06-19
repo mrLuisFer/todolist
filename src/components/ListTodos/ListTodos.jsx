@@ -13,6 +13,7 @@ export default function ListTodos({ tasksValue }) {
           taskTitle={todoValue.task}
           id={todoValue.id}
           description={todoValue.description}
+          date={todoValue.date}
         />
       ))}
     </ListTodosStyled>
