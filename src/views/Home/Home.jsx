@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom'
 import Header from 'components/Header/Header'
 import TasksDashboard from 'components/TaksDashboard/TasksDashboard'
 import { log } from 'utils/functions/log'
+import { HomeStyled } from './Home.styles'
 
 export default function Home() {
   const [userName, setUserName] = useState(localStorage.getItem('userName'))
@@ -23,9 +24,9 @@ export default function Home() {
   }, [])
 
   return (
-    <section>
+    <HomeStyled>
       <Header username={userName} />
       <TasksDashboard />
-    </section>
+    </HomeStyled>
   )
 }

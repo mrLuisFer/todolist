@@ -12,8 +12,8 @@ export const ModalContainer = styled.div`
   background: rgba(0, 0, 0, 0.3);
   padding: 0 1rem;
   height: 100vh;
-
   padding-top: 6rem;
+  backdrop-filter: blur(1px);
 `
 
 export const ModalContent = styled.div`
@@ -21,9 +21,13 @@ export const ModalContent = styled.div`
   position: relative;
   display: block;
 
-  ${paddingLayout('1rem', '0.5rem', '2rem', '0.5rem')}
+  ${paddingLayout('1rem', '0.5rem', '2rem', '0.5rem')};
+  ${borderRadius()};
 
-  ${borderRadius()}
+  @media (min-width: 768px) {
+    max-width: 768px;
+    margin: 0 auto;
+  }
 `
 
 export const ModalCloseBtnContainer = styled.div`

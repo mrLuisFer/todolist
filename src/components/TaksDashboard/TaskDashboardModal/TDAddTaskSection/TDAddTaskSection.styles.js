@@ -38,6 +38,12 @@ export const TDAddTaskButton = styled.button`
   font-size: 1rem;
   color: var(--text-white);
 
+  @media (min-width: 768px) {
+    width: 200px;
+    letter-spacing: 0.5px;
+    font-size: 1.3rem;
+  }
+
   i {
     margin-right: 0.5rem;
     font-size: 1.2rem;

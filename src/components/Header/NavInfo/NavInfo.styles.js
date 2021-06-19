@@ -6,14 +6,13 @@ import { borderRadius } from 'styles/utils/borderRadius'
 export const NavInfoContainer = styled.nav`
   background: var(--bg-dark-blue);
   display: block;
-  left: -25vw;
+  right: 0;
   padding: 0;
   position: absolute;
   width: 100%;
   width: -moz-available; /* WebKit-based browsers will ignore this. */
   width: -webkit-fill-available; /* Mozilla-based browsers will ignore this. */
   width: max-content;
-
   ${borderRadius()}
 `
 
@@ -53,4 +52,8 @@ export const NavInfoListElement = styled.li`
 export const NavInfoListElementLink = styled(Link)`
   text-decoration: none;
   color: var(--text-white);
+`
+
+export const NavInfoList = styled.ul`
+  position: relative;
 `
