@@ -8,27 +8,44 @@ import {
   TodoFlex,
 } from './Todo.styles'
 
-export default function Todo({ taskTitle, description = '', id, date }) {
+export default function Todo({
+  taskTitle,
+  description = '',
+  id,
+  date,
+  deleteTask,
+}) {
   const [inputCheck, setInputCheck] = useState(false)
+  const [target, setTarget] = useState('')
 
   const handleIsTaskDonde = (event) => {
     const isChecked = event.target.checked
-    console.log(isChecked)
+    const target = event.target
     setInputCheck(isChecked)
+    setTarget(target)
+  }
+
+  const handleDeleteTask = () => {
+    const id = target.id
+    console.log(id)
+    deleteTask(id)
   }
 
   return (
     <LTTodoContainer key={id} isChecked={inputCheck}>
       <TodoFlex>
-        <TodoInput
-          type="checkbox"
-          name={`isTaskDone-${id}`}
-          id={`isTaskDone-${id}`}
-          onChange={handleIsTaskDonde}
-        />
-        <TodoLabel htmlFor={`isTaskDone-${id}`} isChecked={inputCheck}>
-          {taskTitle}
-        </TodoLabel>
+        <div>
+          <TodoInput
+            type="checkbox"
+            name={`${id}`}
+            id={`${id}`}
+            onChange={handleIsTaskDonde}
+          />
+          <TodoLabel htmlFor={`${id}`} isChecked={inputCheck}>
+            {taskTitle}
+          </TodoLabel>
+        </div>
+        {inputCheck ? <div onClick={handleDeleteTask}>Trash</div> : ''}
       </TodoFlex>
       {description.length > 5 ? (
         <LTTodoDescription>{description}</LTTodoDescription>

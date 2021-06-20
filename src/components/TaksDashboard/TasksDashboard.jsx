@@ -37,6 +37,14 @@ export default function TasksDashboard() {
     }
   }
 
+  const deleteTask = (id) => {
+    const index = taskValue.indexOf(id)
+    if (index > -1) {
+      taskValue.splice(index, 1)
+      localStorage.setItem('tasksValues', JSON.stringify(taskValue))
+    }
+  }
+
   useEffect(() => {
     handleCloseModal()
     getTaskValue()
@@ -63,7 +71,7 @@ export default function TasksDashboard() {
         ''
       )}
 
-      <ListTodos tasksValue={taskValue} />
+      <ListTodos tasksValue={taskValue} deleteTask={deleteTask} />
     </TasksDashboardContainer>
   )
 }
