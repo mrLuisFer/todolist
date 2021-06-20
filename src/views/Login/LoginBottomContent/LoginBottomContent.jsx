@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router'
 import { bounce } from 'styles/animateCss/classNames'
 import ErrorMsg from 'components/ErrorMsg/ErrorMsg'
-import { log } from 'utils/functions/log'
 
 import {
   LoginBottomContentStyled,
@@ -33,7 +32,6 @@ export default function LoginBottomContent() {
 
   const checkUserName = () => {
     const localstoreItem = localStorage.getItem('userName')
-    log(localstoreItem)
     if (
       localstoreItem !== null &&
       localstoreItem !== undefined &&
@@ -42,7 +40,6 @@ export default function LoginBottomContent() {
       try {
         history.push('/home')
       } catch (e) {
-        log(e)
         window.location.replace('/home')
       }
     }

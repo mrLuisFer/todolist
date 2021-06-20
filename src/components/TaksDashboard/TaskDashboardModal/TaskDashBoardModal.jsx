@@ -62,8 +62,6 @@ export default function TaskDashBoardModal({ taskValue, setTaskValue }) {
       } catch (error) {
         console.log(error)
       }
-
-      console.log(taskValue)
     }
   }
 

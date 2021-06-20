@@ -32,7 +32,6 @@ export default function TasksDashboard() {
     const taskValues = localStorage.getItem('tasksValues')
 
     if (taskValues !== null && taskValues !== undefined) {
-      console.log(taskValues)
       setTaskValue(JSON.parse(taskValues))
     }
   }

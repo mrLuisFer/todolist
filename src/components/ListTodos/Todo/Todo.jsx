@@ -27,7 +27,6 @@ export default function Todo({
 
   const handleDeleteTask = () => {
     const id = target.id
-    console.log(id)
     deleteTask(id)
   }
 
